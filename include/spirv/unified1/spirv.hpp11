@@ -1176,6 +1176,7 @@ enum class Capability : unsigned {
     BindlessTextureNV = 5390,
     RayQueryPositionFetchKHR = 5391,
     CooperativeVectorNV = 5394,
+    CooperativeVectorAD = 65000,
     AtomicFloat16VectorNV = 5404,
     RayTracingDisplacementMicromapNV = 5409,
     RawAccessChainsNV = 5414,
@@ -1187,6 +1188,7 @@ enum class Capability : unsigned {
     CooperativeMatrixTensorAddressingNV = 5433,
     CooperativeMatrixBlockLoadsNV = 5434,
     CooperativeVectorTrainingNV = 5435,
+    CooperativeVectorTrainingAD = 65001,
     RayTracingClusterAccelerationStructureNV = 5437,
     TensorAddressingNV = 5439,
     SubgroupShuffleINTEL = 5568,
@@ -2027,6 +2029,11 @@ enum class Op : unsigned {
     OpCooperativeVectorOuterProductAccumulateNV = 5290,
     OpCooperativeVectorReduceSumAccumulateNV = 5291,
     OpCooperativeVectorMatrixMulAddNV = 5292,
+    OpTypeCooperativeVectorAD = 65010,
+    OpCooperativeVectorMatrixMulAD = 65011,
+    OpCooperativeVectorOuterProductAccumulateAD = 65012,
+    OpCooperativeVectorReduceSumAccumulateAD = 65013,
+    OpCooperativeVectorMatrixMulAddAD = 65014,
     OpCooperativeMatrixConvertNV = 5293,
     OpEmitMeshTasksEXT = 5294,
     OpSetMeshOutputsEXT = 5295,
@@ -2036,6 +2043,8 @@ enum class Op : unsigned {
     OpFetchMicroTriangleVertexBarycentricNV = 5301,
     OpCooperativeVectorLoadNV = 5302,
     OpCooperativeVectorStoreNV = 5303,
+    OpCooperativeVectorLoadAD = 65015,
+    OpCooperativeVectorStoreAD = 65016,
     OpReportIntersectionKHR = 5334,
     OpReportIntersectionNV = 5334,
     OpIgnoreIntersectionNV = 5335,
@@ -2826,10 +2835,15 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpTypeHitObjectNV: *hasResult = true; *hasResultType = false; break;
     case Op::OpImageSampleFootprintNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpTypeCooperativeVectorNV: *hasResult = true; *hasResultType = false; break;
+    case Op::OpTypeCooperativeVectorAD: *hasResult = true; *hasResultType = false; break;
     case Op::OpCooperativeVectorMatrixMulNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeVectorMatrixMulAD: *hasResult = true; *hasResultType = true; break;
     case Op::OpCooperativeVectorOuterProductAccumulateNV: *hasResult = false; *hasResultType = false; break;
+    case Op::OpCooperativeVectorOuterProductAccumulateAD: *hasResult = false; *hasResultType = false; break;
     case Op::OpCooperativeVectorReduceSumAccumulateNV: *hasResult = false; *hasResultType = false; break;
+    case Op::OpCooperativeVectorReduceSumAccumulateAD: *hasResult = false; *hasResultType = false; break;
     case Op::OpCooperativeVectorMatrixMulAddNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeVectorMatrixMulAddAD: *hasResult = true; *hasResultType = true; break;
     case Op::OpCooperativeMatrixConvertNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpEmitMeshTasksEXT: *hasResult = false; *hasResultType = false; break;
     case Op::OpSetMeshOutputsEXT: *hasResult = false; *hasResultType = false; break;
@@ -2838,7 +2852,9 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpFetchMicroTriangleVertexPositionNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpFetchMicroTriangleVertexBarycentricNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpCooperativeVectorLoadNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeVectorLoadAD: *hasResult = true; *hasResultType = true; break;
     case Op::OpCooperativeVectorStoreNV: *hasResult = false; *hasResultType = false; break;
+    case Op::OpCooperativeVectorStoreAD: *hasResult = false; *hasResultType = false; break;
     case Op::OpReportIntersectionKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpIgnoreIntersectionNV: *hasResult = false; *hasResultType = false; break;
     case Op::OpTerminateRayNV: *hasResult = false; *hasResultType = false; break;
@@ -4011,6 +4027,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::BindlessTextureNV: return "BindlessTextureNV";
     case Capability::RayQueryPositionFetchKHR: return "RayQueryPositionFetchKHR";
     case Capability::CooperativeVectorNV: return "CooperativeVectorNV";
+    case Capability::CooperativeVectorAD: return "CooperativeVectorAD";
     case Capability::AtomicFloat16VectorNV: return "AtomicFloat16VectorNV";
     case Capability::RayTracingDisplacementMicromapNV: return "RayTracingDisplacementMicromapNV";
     case Capability::RawAccessChainsNV: return "RawAccessChainsNV";
@@ -4022,6 +4039,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::CooperativeMatrixTensorAddressingNV: return "CooperativeMatrixTensorAddressingNV";
     case Capability::CooperativeMatrixBlockLoadsNV: return "CooperativeMatrixBlockLoadsNV";
     case Capability::CooperativeVectorTrainingNV: return "CooperativeVectorTrainingNV";
+    case Capability::CooperativeVectorTrainingAD: return "CooperativeVectorTrainingAD";
     case Capability::RayTracingClusterAccelerationStructureNV: return "RayTracingClusterAccelerationStructureNV";
     case Capability::TensorAddressingNV: return "TensorAddressingNV";
     case Capability::SubgroupShuffleINTEL: return "SubgroupShuffleINTEL";
@@ -4746,10 +4764,15 @@ inline const char* OpToString(Op value) {
     case Op::OpTypeHitObjectNV: return "OpTypeHitObjectNV";
     case Op::OpImageSampleFootprintNV: return "OpImageSampleFootprintNV";
     case Op::OpTypeCooperativeVectorNV: return "OpTypeCooperativeVectorNV";
+    case Op::OpTypeCooperativeVectorAD: return "OpTypeCooperativeVectorAD";
     case Op::OpCooperativeVectorMatrixMulNV: return "OpCooperativeVectorMatrixMulNV";
+    case Op::OpCooperativeVectorMatrixMulAD: return "OpCooperativeVectorMatrixMulAD";
     case Op::OpCooperativeVectorOuterProductAccumulateNV: return "OpCooperativeVectorOuterProductAccumulateNV";
+    case Op::OpCooperativeVectorOuterProductAccumulateAD: return "OpCooperativeVectorOuterProductAccumulateAD";
     case Op::OpCooperativeVectorReduceSumAccumulateNV: return "OpCooperativeVectorReduceSumAccumulateNV";
+    case Op::OpCooperativeVectorReduceSumAccumulateAD: return "OpCooperativeVectorReduceSumAccumulateAD";
     case Op::OpCooperativeVectorMatrixMulAddNV: return "OpCooperativeVectorMatrixMulAddNV";
+    case Op::OpCooperativeVectorMatrixMulAddAD: return "OpCooperativeVectorMatrixMulAddAD";
     case Op::OpCooperativeMatrixConvertNV: return "OpCooperativeMatrixConvertNV";
     case Op::OpEmitMeshTasksEXT: return "OpEmitMeshTasksEXT";
     case Op::OpSetMeshOutputsEXT: return "OpSetMeshOutputsEXT";
@@ -4758,7 +4781,9 @@ inline const char* OpToString(Op value) {
     case Op::OpFetchMicroTriangleVertexPositionNV: return "OpFetchMicroTriangleVertexPositionNV";
     case Op::OpFetchMicroTriangleVertexBarycentricNV: return "OpFetchMicroTriangleVertexBarycentricNV";
     case Op::OpCooperativeVectorLoadNV: return "OpCooperativeVectorLoadNV";
+    case Op::OpCooperativeVectorLoadAD: return "OpCooperativeVectorLoadAD";
     case Op::OpCooperativeVectorStoreNV: return "OpCooperativeVectorStoreNV";
+    case Op::OpCooperativeVectorStoreAD: return "OpCooperativeVectorStoreAD";
     case Op::OpReportIntersectionKHR: return "OpReportIntersectionKHR";
     case Op::OpIgnoreIntersectionNV: return "OpIgnoreIntersectionNV";
     case Op::OpTerminateRayNV: return "OpTerminateRayNV";
@@ -5151,4 +5176,3 @@ constexpr RawAccessChainOperandsMask operator~(RawAccessChainOperandsMask a) { r
 }  // end namespace spv
 
 #endif  // #ifndef spirv_HPP
-

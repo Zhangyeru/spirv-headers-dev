@@ -5980,6 +5980,18 @@
       "version" : "None"
     },
     {
+      "opname" : "OpTypeCooperativeVectorAD",
+      "class"  : "Type-Declaration",
+      "opcode" : 65010,
+      "operands" : [
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "name" : "'Component Type'" },
+        { "kind" : "IdRef",        "name" : "'Component Count'" }
+      ],
+      "capabilities" : [ "CooperativeVectorAD" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpCooperativeVectorMatrixMulNV",
       "class"  : "Reserved",
       "opcode" : 5289,
@@ -6002,6 +6014,28 @@
       "version" : "None"
     },
     {
+      "opname" : "OpCooperativeVectorMatrixMulAD",
+      "class"  : "Reserved",
+      "opcode" : 65011,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "'Input'" },
+        { "kind" : "IdRef",             "name" : "'InputInterpretation'" },
+        { "kind" : "IdRef",             "name" : "'Matrix'" },
+        { "kind" : "IdRef",             "name" : "'MatrixOffset'" },
+        { "kind" : "IdRef",             "name" : "'MatrixInterpretation'" },
+        { "kind" : "IdRef",             "name" : "'M'" },
+        { "kind" : "IdRef",             "name" : "'K'" },
+        { "kind" : "IdRef",             "name" : "'MemoryLayout'" },
+        { "kind" : "IdRef",             "name" : "'Transpose'" },
+        { "kind" : "IdRef",             "name" : "'MatrixStride'", "quantifier": "?" },
+        { "kind" : "CooperativeMatrixOperands",             "quantifier" : "?" }
+      ],
+      "capabilities" : [ "CooperativeVectorAD" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpCooperativeVectorOuterProductAccumulateNV",
       "class"  : "Reserved",
       "opcode" : 5290,
@@ -6018,6 +6052,22 @@
       "version" : "None"
     },
     {
+      "opname" : "OpCooperativeVectorOuterProductAccumulateAD",
+      "class"  : "Reserved",
+      "opcode" : 65012,
+      "operands" : [
+        { "kind" : "IdRef",             "name" : "'Pointer'" },
+        { "kind" : "IdRef",             "name" : "'Offset'" },
+        { "kind" : "IdRef",             "name" : "'A'" },
+        { "kind" : "IdRef",             "name" : "'B'" },
+        { "kind" : "IdRef",             "name" : "'MemoryLayout'" },
+        { "kind" : "IdRef",             "name" : "'MatrixInterpretation'" },
+        { "kind" : "IdRef",             "name" : "'MatrixStride'", "quantifier": "?" }
+      ],
+      "capabilities" : [ "CooperativeVectorTrainingAD" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpCooperativeVectorReduceSumAccumulateNV",
       "class"  : "Reserved",
       "opcode" : 5291,
@@ -6027,6 +6077,18 @@
         { "kind" : "IdRef",             "name" : "'V'" }
       ],
       "capabilities" : [ "CooperativeVectorTrainingNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeVectorReduceSumAccumulateAD",
+      "class"  : "Reserved",
+      "opcode" : 65013,
+      "operands" : [
+        { "kind" : "IdRef",             "name" : "'Pointer'" },
+        { "kind" : "IdRef",             "name" : "'Offset'" },
+        { "kind" : "IdRef",             "name" : "'V'" }
+      ],
+      "capabilities" : [ "CooperativeVectorTrainingAD" ],
       "version" : "None"
     },
     {
@@ -6052,6 +6114,31 @@
         { "kind" : "CooperativeMatrixOperands",             "quantifier" : "?" }
       ],
       "capabilities" : [ "CooperativeVectorNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeVectorMatrixMulAddAD",
+      "class"  : "Reserved",
+      "opcode" : 65014,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "'Input'" },
+        { "kind" : "IdRef",             "name" : "'InputInterpretation'" },
+        { "kind" : "IdRef",             "name" : "'Matrix'" },
+        { "kind" : "IdRef",             "name" : "'MatrixOffset'" },
+        { "kind" : "IdRef",             "name" : "'MatrixInterpretation'" },
+        { "kind" : "IdRef",             "name" : "'Bias'" },
+        { "kind" : "IdRef",             "name" : "'BiasOffset'" },
+        { "kind" : "IdRef",             "name" : "'BiasInterpretation'" },
+        { "kind" : "IdRef",             "name" : "'M'" },
+        { "kind" : "IdRef",             "name" : "'K'" },
+        { "kind" : "IdRef",             "name" : "'MemoryLayout'" },
+        { "kind" : "IdRef",             "name" : "'Transpose'" },
+        { "kind" : "IdRef",             "name" : "'MatrixStride'", "quantifier": "?" },
+        { "kind" : "CooperativeMatrixOperands",             "quantifier" : "?" }
+      ],
+      "capabilities" : [ "CooperativeVectorAD" ],
       "version" : "None"
     },
     {
@@ -6162,6 +6249,20 @@
       "version" : "None"
     },
     {
+      "opname" : "OpCooperativeVectorLoadAD",
+      "class"  : "Memory",
+      "opcode" : 65015,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "'Pointer'" },
+        { "kind" : "IdRef",             "name" : "'Offset'" },
+        { "kind" : "MemoryAccess",      "quantifier" : "?" }
+      ],
+      "capabilities" : [ "CooperativeVectorAD" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpCooperativeVectorStoreNV",
       "class"  : "Memory",
       "opcode" : 5303,
@@ -6172,6 +6273,19 @@
         { "kind" : "MemoryAccess",      "quantifier" : "?" }
       ],
       "capabilities" : [ "CooperativeVectorNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeVectorStoreAD",
+      "class"  : "Memory",
+      "opcode" : 65016,
+      "operands" : [
+        { "kind" : "IdRef",             "name" : "'Pointer'" },
+        { "kind" : "IdRef",             "name" : "'Offset'" },
+        { "kind" : "IdRef",             "name" : "'Object'" },
+        { "kind" : "MemoryAccess",      "quantifier" : "?" }
+      ],
+      "capabilities" : [ "CooperativeVectorAD" ],
       "version" : "None"
     },
     {
@@ -16628,6 +16742,12 @@
           "version" : "None"
         },
         {
+          "enumerant" : "CooperativeVectorAD",
+          "value" : 65000,
+          "extensions" : [ "SPV_AD_cooperative_vector" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "AtomicFloat16VectorNV",
           "value" : 5404,
           "extensions" : [ "SPV_NV_shader_atomic_fp16_vector" ],
@@ -16692,6 +16812,12 @@
           "enumerant" : "CooperativeVectorTrainingNV",
           "value" : 5435,
           "extensions" : [ "SPV_NV_cooperative_vector" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "CooperativeVectorTrainingAD",
+          "value" : 65001,
+          "extensions" : [ "SPV_AD_cooperative_vector" ],
           "version" : "None"
         },
         {
