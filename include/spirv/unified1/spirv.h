@@ -1168,6 +1168,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityComputeDerivativeGroupLinearNV = 5350,
     SpvCapabilityRayTracingProvisionalKHR = 5353,
     SpvCapabilityCooperativeMatrixNV = 5357,
+    SpvCapabilityCooperativeMatrixAD = 65040,
     SpvCapabilityFragmentShaderSampleInterlockEXT = 5363,
     SpvCapabilityFragmentShaderShadingRateInterlockEXT = 5372,
     SpvCapabilityShaderSMBuiltinsNV = 5373,
@@ -2067,6 +2068,11 @@ typedef enum SpvOp_ {
     SpvOpCooperativeMatrixStoreNV = 5360,
     SpvOpCooperativeMatrixMulAddNV = 5361,
     SpvOpCooperativeMatrixLengthNV = 5362,
+    SpvOpTypeCooperativeMatrixAD = 65050,
+    SpvOpCooperativeMatrixLoadAD = 65051,
+    SpvOpCooperativeMatrixStoreAD = 65052,
+    SpvOpCooperativeMatrixMulAddAD = 65053,
+    SpvOpCooperativeMatrixLengthAD = 65054,
     SpvOpBeginInvocationInterlockEXT = 5364,
     SpvOpEndInvocationInterlockEXT = 5365,
     SpvOpCooperativeMatrixReduceNV = 5366,
@@ -2871,10 +2877,15 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpRayQueryGetClusterIdNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpHitObjectGetClusterIdNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpTypeCooperativeMatrixNV: *hasResult = true; *hasResultType = false; break;
+    case SpvOpTypeCooperativeMatrixAD: *hasResult = true; *hasResultType = false; break;
     case SpvOpCooperativeMatrixLoadNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeMatrixLoadAD: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeMatrixStoreNV: *hasResult = false; *hasResultType = false; break;
+    case SpvOpCooperativeMatrixStoreAD: *hasResult = false; *hasResultType = false; break;
     case SpvOpCooperativeMatrixMulAddNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeMatrixMulAddAD: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeMatrixLengthNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeMatrixLengthAD: *hasResult = true; *hasResultType = true; break;
     case SpvOpBeginInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
     case SpvOpEndInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
     case SpvOpCooperativeMatrixReduceNV: *hasResult = true; *hasResultType = true; break;
@@ -4020,6 +4031,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityComputeDerivativeGroupLinearKHR: return "ComputeDerivativeGroupLinearKHR";
     case SpvCapabilityRayTracingProvisionalKHR: return "RayTracingProvisionalKHR";
     case SpvCapabilityCooperativeMatrixNV: return "CooperativeMatrixNV";
+    case SpvCapabilityCooperativeMatrixAD: return "CooperativeMatrixAD";
     case SpvCapabilityFragmentShaderSampleInterlockEXT: return "FragmentShaderSampleInterlockEXT";
     case SpvCapabilityFragmentShaderShadingRateInterlockEXT: return "FragmentShaderShadingRateInterlockEXT";
     case SpvCapabilityShaderSMBuiltinsNV: return "ShaderSMBuiltinsNV";
@@ -4800,10 +4812,15 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpRayQueryGetClusterIdNV: return "OpRayQueryGetClusterIdNV";
     case SpvOpHitObjectGetClusterIdNV: return "OpHitObjectGetClusterIdNV";
     case SpvOpTypeCooperativeMatrixNV: return "OpTypeCooperativeMatrixNV";
+    case SpvOpTypeCooperativeMatrixAD: return "OpTypeCooperativeMatrixAD";
     case SpvOpCooperativeMatrixLoadNV: return "OpCooperativeMatrixLoadNV";
+    case SpvOpCooperativeMatrixLoadAD: return "OpCooperativeMatrixLoadAD";
     case SpvOpCooperativeMatrixStoreNV: return "OpCooperativeMatrixStoreNV";
+    case SpvOpCooperativeMatrixStoreAD: return "OpCooperativeMatrixStoreAD";
     case SpvOpCooperativeMatrixMulAddNV: return "OpCooperativeMatrixMulAddNV";
+    case SpvOpCooperativeMatrixMulAddAD: return "OpCooperativeMatrixMulAddAD";
     case SpvOpCooperativeMatrixLengthNV: return "OpCooperativeMatrixLengthNV";
+    case SpvOpCooperativeMatrixLengthAD: return "OpCooperativeMatrixLengthAD";
     case SpvOpBeginInvocationInterlockEXT: return "OpBeginInvocationInterlockEXT";
     case SpvOpEndInvocationInterlockEXT: return "OpEndInvocationInterlockEXT";
     case SpvOpCooperativeMatrixReduceNV: return "OpCooperativeMatrixReduceNV";

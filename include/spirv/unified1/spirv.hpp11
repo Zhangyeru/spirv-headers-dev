@@ -1164,6 +1164,7 @@ enum class Capability : unsigned {
     ComputeDerivativeGroupLinearNV = 5350,
     RayTracingProvisionalKHR = 5353,
     CooperativeMatrixNV = 5357,
+    CooperativeMatrixAD = 65040,
     FragmentShaderSampleInterlockEXT = 5363,
     FragmentShaderShadingRateInterlockEXT = 5372,
     ShaderSMBuiltinsNV = 5373,
@@ -2063,6 +2064,11 @@ enum class Op : unsigned {
     OpCooperativeMatrixStoreNV = 5360,
     OpCooperativeMatrixMulAddNV = 5361,
     OpCooperativeMatrixLengthNV = 5362,
+    OpTypeCooperativeMatrixAD = 65050,
+    OpCooperativeMatrixLoadAD = 65051,
+    OpCooperativeMatrixStoreAD = 65052,
+    OpCooperativeMatrixMulAddAD = 65053,
+    OpCooperativeMatrixLengthAD = 65054,
     OpBeginInvocationInterlockEXT = 5364,
     OpEndInvocationInterlockEXT = 5365,
     OpCooperativeMatrixReduceNV = 5366,
@@ -2867,10 +2873,15 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpRayQueryGetClusterIdNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpHitObjectGetClusterIdNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpTypeCooperativeMatrixNV: *hasResult = true; *hasResultType = false; break;
+    case Op::OpTypeCooperativeMatrixAD: *hasResult = true; *hasResultType = false; break;
     case Op::OpCooperativeMatrixLoadNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeMatrixLoadAD: *hasResult = true; *hasResultType = true; break;
     case Op::OpCooperativeMatrixStoreNV: *hasResult = false; *hasResultType = false; break;
+    case Op::OpCooperativeMatrixStoreAD: *hasResult = false; *hasResultType = false; break;
     case Op::OpCooperativeMatrixMulAddNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeMatrixMulAddAD: *hasResult = true; *hasResultType = true; break;
     case Op::OpCooperativeMatrixLengthNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeMatrixLengthAD: *hasResult = true; *hasResultType = true; break;
     case Op::OpBeginInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
     case Op::OpEndInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
     case Op::OpCooperativeMatrixReduceNV: *hasResult = true; *hasResultType = true; break;
@@ -4016,6 +4027,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::ComputeDerivativeGroupLinearKHR: return "ComputeDerivativeGroupLinearKHR";
     case Capability::RayTracingProvisionalKHR: return "RayTracingProvisionalKHR";
     case Capability::CooperativeMatrixNV: return "CooperativeMatrixNV";
+    case Capability::CooperativeMatrixAD: return "CooperativeMatrixAD";
     case Capability::FragmentShaderSampleInterlockEXT: return "FragmentShaderSampleInterlockEXT";
     case Capability::FragmentShaderShadingRateInterlockEXT: return "FragmentShaderShadingRateInterlockEXT";
     case Capability::ShaderSMBuiltinsNV: return "ShaderSMBuiltinsNV";
@@ -4796,10 +4808,15 @@ inline const char* OpToString(Op value) {
     case Op::OpRayQueryGetClusterIdNV: return "OpRayQueryGetClusterIdNV";
     case Op::OpHitObjectGetClusterIdNV: return "OpHitObjectGetClusterIdNV";
     case Op::OpTypeCooperativeMatrixNV: return "OpTypeCooperativeMatrixNV";
+    case Op::OpTypeCooperativeMatrixAD: return "OpTypeCooperativeMatrixAD";
     case Op::OpCooperativeMatrixLoadNV: return "OpCooperativeMatrixLoadNV";
+    case Op::OpCooperativeMatrixLoadAD: return "OpCooperativeMatrixLoadAD";
     case Op::OpCooperativeMatrixStoreNV: return "OpCooperativeMatrixStoreNV";
+    case Op::OpCooperativeMatrixStoreAD: return "OpCooperativeMatrixStoreAD";
     case Op::OpCooperativeMatrixMulAddNV: return "OpCooperativeMatrixMulAddNV";
+    case Op::OpCooperativeMatrixMulAddAD: return "OpCooperativeMatrixMulAddAD";
     case Op::OpCooperativeMatrixLengthNV: return "OpCooperativeMatrixLengthNV";
+    case Op::OpCooperativeMatrixLengthAD: return "OpCooperativeMatrixLengthAD";
     case Op::OpBeginInvocationInterlockEXT: return "OpBeginInvocationInterlockEXT";
     case Op::OpEndInvocationInterlockEXT: return "OpEndInvocationInterlockEXT";
     case Op::OpCooperativeMatrixReduceNV: return "OpCooperativeMatrixReduceNV";
