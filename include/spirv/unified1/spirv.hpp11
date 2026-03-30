@@ -2069,6 +2069,7 @@ enum class Op : unsigned {
     OpCooperativeMatrixStoreAD = 65052,
     OpCooperativeMatrixMulAddAD = 65053,
     OpCooperativeMatrixLengthAD = 65054,
+    OpCooperativeMatrixReduceAD = 65055,
     OpBeginInvocationInterlockEXT = 5364,
     OpEndInvocationInterlockEXT = 5365,
     OpCooperativeMatrixReduceNV = 5366,
@@ -2882,6 +2883,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpCooperativeMatrixMulAddAD: *hasResult = true; *hasResultType = true; break;
     case Op::OpCooperativeMatrixLengthNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpCooperativeMatrixLengthAD: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeMatrixReduceAD: *hasResult = true; *hasResultType = true; break;
     case Op::OpBeginInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
     case Op::OpEndInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
     case Op::OpCooperativeMatrixReduceNV: *hasResult = true; *hasResultType = true; break;
@@ -4817,6 +4819,7 @@ inline const char* OpToString(Op value) {
     case Op::OpCooperativeMatrixMulAddAD: return "OpCooperativeMatrixMulAddAD";
     case Op::OpCooperativeMatrixLengthNV: return "OpCooperativeMatrixLengthNV";
     case Op::OpCooperativeMatrixLengthAD: return "OpCooperativeMatrixLengthAD";
+    case Op::OpCooperativeMatrixReduceAD: return "OpCooperativeMatrixReduceAD";
     case Op::OpBeginInvocationInterlockEXT: return "OpBeginInvocationInterlockEXT";
     case Op::OpEndInvocationInterlockEXT: return "OpEndInvocationInterlockEXT";
     case Op::OpCooperativeMatrixReduceNV: return "OpCooperativeMatrixReduceNV";

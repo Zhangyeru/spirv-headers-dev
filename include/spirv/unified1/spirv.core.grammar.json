@@ -6642,6 +6642,21 @@
       "version" : "None"
     },
     {
+      "opname" : "OpCooperativeMatrixReduceAD",
+      "class"  : "Arithmetic",
+      "opcode" : 65055,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Matrix'" },
+        { "kind" : "IdRef", "name" : "'ReduceMask'" },
+        { "kind" : "IdRef", "name" : "'CombineOp'" }
+      ],
+      "capabilities" : [ "CooperativeMatrixAD" ],
+      "extensions" : [ "SPV_AD_cooperative_matrix" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpCooperativeMatrixLoadTensorNV",
       "class"  : "Memory",
       "opcode" : 5367,
