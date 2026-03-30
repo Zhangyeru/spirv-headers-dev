@@ -6515,8 +6515,9 @@
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
         { "kind" : "IdRef",             "name" : "'Pointer'" },
-        { "kind" : "IdRef",             "name" : "'Stride'" },
-        { "kind" : "IdRef",             "name" : "'Column Major'" },
+        { "kind" : "IdRef",             "name" : "'Matrix Shape'" },
+        { "kind" : "IdRef",             "name" : "'Matrix Offset'" },
+        { "kind" : "IdRef",             "name" : "'Matrix Layout'" },
         { "kind" : "MemoryAccess",      "quantifier" : "?" }
       ],
       "capabilities" : [ "CooperativeMatrixAD" ],
@@ -6545,8 +6546,9 @@
       "operands" : [
         { "kind" : "IdRef",             "name" : "'Pointer'" },
         { "kind" : "IdRef",             "name" : "'Object'" },
-        { "kind" : "IdRef",             "name" : "'Stride'" },
-        { "kind" : "IdRef",             "name" : "'Column Major'" },
+        { "kind" : "IdRef",             "name" : "'Matrix Shape'" },
+        { "kind" : "IdRef",             "name" : "'Matrix Offset'" },
+        { "kind" : "IdRef",             "name" : "'Matrix Layout'" },
         { "kind" : "MemoryAccess",      "quantifier" : "?" }
       ],
       "capabilities" : [ "CooperativeMatrixAD" ],
