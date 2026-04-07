@@ -6255,9 +6255,7 @@
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
-        { "kind" : "IdRef",             "name" : "'Pointer'" },
-        { "kind" : "IdRef",             "name" : "'Offset'" },
-        { "kind" : "MemoryAccess",      "quantifier" : "?" }
+        { "kind" : "IdRef",             "name" : "'Pointer'" }
       ],
       "capabilities" : [ "CooperativeVectorAD" ],
       "version" : "None"
