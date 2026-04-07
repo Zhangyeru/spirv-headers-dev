@@ -6279,9 +6279,7 @@
       "opcode" : 65016,
       "operands" : [
         { "kind" : "IdRef",             "name" : "'Pointer'" },
-        { "kind" : "IdRef",             "name" : "'Offset'" },
-        { "kind" : "IdRef",             "name" : "'Object'" },
-        { "kind" : "MemoryAccess",      "quantifier" : "?" }
+        { "kind" : "IdRef",             "name" : "'Object'" }
       ],
       "capabilities" : [ "CooperativeVectorAD" ],
       "version" : "None"
