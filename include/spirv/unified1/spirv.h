@@ -1193,7 +1193,6 @@ typedef enum SpvCapability_ {
     SpvCapabilityCooperativeMatrixTensorAddressingNV = 5433,
     SpvCapabilityCooperativeMatrixBlockLoadsNV = 5434,
     SpvCapabilityCooperativeVectorTrainingNV = 5435,
-    SpvCapabilityCooperativeVectorTrainingAD = 65001,
     SpvCapabilityRayTracingClusterAccelerationStructureNV = 5437,
     SpvCapabilityTensorAddressingNV = 5439,
     SpvCapabilitySubgroupShuffleINTEL = 5568,
@@ -2036,8 +2035,6 @@ typedef enum SpvOp_ {
     SpvOpCooperativeVectorMatrixMulAddNV = 5292,
     SpvOpTypeCooperativeVectorAD = 65010,
     SpvOpCooperativeVectorMatrixMulAD = 65011,
-    SpvOpCooperativeVectorOuterProductAccumulateAD = 65012,
-    SpvOpCooperativeVectorReduceSumAccumulateAD = 65013,
     SpvOpCooperativeVectorMatrixMulAddAD = 65014,
     SpvOpCooperativeMatrixConvertNV = 5293,
     SpvOpEmitMeshTasksEXT = 5294,
@@ -2849,9 +2846,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpCooperativeVectorMatrixMulNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeVectorMatrixMulAD: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeVectorOuterProductAccumulateNV: *hasResult = false; *hasResultType = false; break;
-    case SpvOpCooperativeVectorOuterProductAccumulateAD: *hasResult = false; *hasResultType = false; break;
     case SpvOpCooperativeVectorReduceSumAccumulateNV: *hasResult = false; *hasResultType = false; break;
-    case SpvOpCooperativeVectorReduceSumAccumulateAD: *hasResult = false; *hasResultType = false; break;
     case SpvOpCooperativeVectorMatrixMulAddNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeVectorMatrixMulAddAD: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeMatrixConvertNV: *hasResult = true; *hasResultType = true; break;
@@ -4055,7 +4050,6 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityCooperativeMatrixTensorAddressingNV: return "CooperativeMatrixTensorAddressingNV";
     case SpvCapabilityCooperativeMatrixBlockLoadsNV: return "CooperativeMatrixBlockLoadsNV";
     case SpvCapabilityCooperativeVectorTrainingNV: return "CooperativeVectorTrainingNV";
-    case SpvCapabilityCooperativeVectorTrainingAD: return "CooperativeVectorTrainingAD";
     case SpvCapabilityRayTracingClusterAccelerationStructureNV: return "RayTracingClusterAccelerationStructureNV";
     case SpvCapabilityTensorAddressingNV: return "TensorAddressingNV";
     case SpvCapabilitySubgroupShuffleINTEL: return "SubgroupShuffleINTEL";
@@ -4784,9 +4778,7 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpCooperativeVectorMatrixMulNV: return "OpCooperativeVectorMatrixMulNV";
     case SpvOpCooperativeVectorMatrixMulAD: return "OpCooperativeVectorMatrixMulAD";
     case SpvOpCooperativeVectorOuterProductAccumulateNV: return "OpCooperativeVectorOuterProductAccumulateNV";
-    case SpvOpCooperativeVectorOuterProductAccumulateAD: return "OpCooperativeVectorOuterProductAccumulateAD";
     case SpvOpCooperativeVectorReduceSumAccumulateNV: return "OpCooperativeVectorReduceSumAccumulateNV";
-    case SpvOpCooperativeVectorReduceSumAccumulateAD: return "OpCooperativeVectorReduceSumAccumulateAD";
     case SpvOpCooperativeVectorMatrixMulAddNV: return "OpCooperativeVectorMatrixMulAddNV";
     case SpvOpCooperativeVectorMatrixMulAddAD: return "OpCooperativeVectorMatrixMulAddAD";
     case SpvOpCooperativeMatrixConvertNV: return "OpCooperativeMatrixConvertNV";

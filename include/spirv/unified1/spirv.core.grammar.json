@@ -6043,22 +6043,6 @@
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeVectorOuterProductAccumulateAD",
-      "class"  : "Reserved",
-      "opcode" : 65012,
-      "operands" : [
-        { "kind" : "IdRef",             "name" : "'Pointer'" },
-        { "kind" : "IdRef",             "name" : "'Offset'" },
-        { "kind" : "IdRef",             "name" : "'A'" },
-        { "kind" : "IdRef",             "name" : "'B'" },
-        { "kind" : "IdRef",             "name" : "'MemoryLayout'" },
-        { "kind" : "IdRef",             "name" : "'MatrixInterpretation'" },
-        { "kind" : "IdRef",             "name" : "'MatrixStride'", "quantifier": "?" }
-      ],
-      "capabilities" : [ "CooperativeVectorTrainingAD" ],
-      "version" : "None"
-    },
-    {
       "opname" : "OpCooperativeVectorReduceSumAccumulateNV",
       "class"  : "Reserved",
       "opcode" : 5291,
@@ -6068,18 +6052,6 @@
         { "kind" : "IdRef",             "name" : "'V'" }
       ],
       "capabilities" : [ "CooperativeVectorTrainingNV" ],
-      "version" : "None"
-    },
-    {
-      "opname" : "OpCooperativeVectorReduceSumAccumulateAD",
-      "class"  : "Reserved",
-      "opcode" : 65013,
-      "operands" : [
-        { "kind" : "IdRef",             "name" : "'Pointer'" },
-        { "kind" : "IdRef",             "name" : "'Offset'" },
-        { "kind" : "IdRef",             "name" : "'V'" }
-      ],
-      "capabilities" : [ "CooperativeVectorTrainingAD" ],
       "version" : "None"
     },
     {
@@ -16883,12 +16855,6 @@
           "enumerant" : "CooperativeVectorTrainingNV",
           "value" : 5435,
           "extensions" : [ "SPV_NV_cooperative_vector" ],
-          "version" : "None"
-        },
-        {
-          "enumerant" : "CooperativeVectorTrainingAD",
-          "value" : 65001,
-          "extensions" : [ "SPV_AD_cooperative_vector" ],
           "version" : "None"
         },
         {
