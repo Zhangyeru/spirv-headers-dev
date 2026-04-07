@@ -6021,16 +6021,7 @@
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
         { "kind" : "IdRef",             "name" : "'Input'" },
-        { "kind" : "IdRef",             "name" : "'InputInterpretation'" },
-        { "kind" : "IdRef",             "name" : "'Matrix'" },
-        { "kind" : "IdRef",             "name" : "'MatrixOffset'" },
-        { "kind" : "IdRef",             "name" : "'MatrixInterpretation'" },
-        { "kind" : "IdRef",             "name" : "'M'" },
-        { "kind" : "IdRef",             "name" : "'K'" },
-        { "kind" : "IdRef",             "name" : "'MemoryLayout'" },
-        { "kind" : "IdRef",             "name" : "'Transpose'" },
-        { "kind" : "IdRef",             "name" : "'MatrixStride'", "quantifier": "?" },
-        { "kind" : "CooperativeMatrixOperands",             "quantifier" : "?" }
+        { "kind" : "IdRef",             "name" : "'Matrix'" }
       ],
       "capabilities" : [ "CooperativeVectorAD" ],
       "version" : "None"
@@ -6124,19 +6115,8 @@
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
         { "kind" : "IdRef",             "name" : "'Input'" },
-        { "kind" : "IdRef",             "name" : "'InputInterpretation'" },
         { "kind" : "IdRef",             "name" : "'Matrix'" },
-        { "kind" : "IdRef",             "name" : "'MatrixOffset'" },
-        { "kind" : "IdRef",             "name" : "'MatrixInterpretation'" },
-        { "kind" : "IdRef",             "name" : "'Bias'" },
-        { "kind" : "IdRef",             "name" : "'BiasOffset'" },
-        { "kind" : "IdRef",             "name" : "'BiasInterpretation'" },
-        { "kind" : "IdRef",             "name" : "'M'" },
-        { "kind" : "IdRef",             "name" : "'K'" },
-        { "kind" : "IdRef",             "name" : "'MemoryLayout'" },
-        { "kind" : "IdRef",             "name" : "'Transpose'" },
-        { "kind" : "IdRef",             "name" : "'MatrixStride'", "quantifier": "?" },
-        { "kind" : "CooperativeMatrixOperands",             "quantifier" : "?" }
+        { "kind" : "IdRef",             "name" : "'Bias'" }
       ],
       "capabilities" : [ "CooperativeVectorAD" ],
       "version" : "None"
