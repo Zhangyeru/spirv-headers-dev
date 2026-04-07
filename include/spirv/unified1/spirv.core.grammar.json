@@ -6513,8 +6513,7 @@
         { "kind" : "IdRef",             "name" : "'Pointer'" },
         { "kind" : "IdRef",             "name" : "'Matrix Shape'" },
         { "kind" : "IdRef",             "name" : "'Matrix Offset'" },
-        { "kind" : "IdRef",             "name" : "'Matrix Layout'" },
-        { "kind" : "MemoryAccess",      "quantifier" : "?" }
+        { "kind" : "IdRef",             "name" : "'Matrix Layout'" }
       ],
       "capabilities" : [ "CooperativeMatrixAD" ],
       "extensions" : [ "SPV_AD_cooperative_matrix" ],
@@ -6544,8 +6543,7 @@
         { "kind" : "IdRef",             "name" : "'Object'" },
         { "kind" : "IdRef",             "name" : "'Matrix Shape'" },
         { "kind" : "IdRef",             "name" : "'Matrix Offset'" },
-        { "kind" : "IdRef",             "name" : "'Matrix Layout'" },
-        { "kind" : "MemoryAccess",      "quantifier" : "?" }
+        { "kind" : "IdRef",             "name" : "'Matrix Layout'" }
       ],
       "capabilities" : [ "CooperativeMatrixAD" ],
       "extensions" : [ "SPV_AD_cooperative_matrix" ],
