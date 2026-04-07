@@ -1169,6 +1169,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityRayTracingProvisionalKHR = 5353,
     SpvCapabilityCooperativeMatrixNV = 5357,
     SpvCapabilityCooperativeMatrixAD = 65040,
+    SpvCapabilityCooperativeVectorAD = 65000,
     SpvCapabilityFragmentShaderSampleInterlockEXT = 5363,
     SpvCapabilityFragmentShaderShadingRateInterlockEXT = 5372,
     SpvCapabilityShaderSMBuiltinsNV = 5373,
@@ -1181,7 +1182,6 @@ typedef enum SpvCapability_ {
     SpvCapabilityBindlessTextureNV = 5390,
     SpvCapabilityRayQueryPositionFetchKHR = 5391,
     SpvCapabilityCooperativeVectorNV = 5394,
-    SpvCapabilityCooperativeVectorAD = 65000,
     SpvCapabilityAtomicFloat16VectorNV = 5404,
     SpvCapabilityRayTracingDisplacementMicromapNV = 5409,
     SpvCapabilityRawAccessChainsNV = 5414,
@@ -2036,6 +2036,14 @@ typedef enum SpvOp_ {
     SpvOpTypeCooperativeVectorAD = 65010,
     SpvOpCooperativeVectorMatrixMulAD = 65011,
     SpvOpCooperativeVectorMatrixMulAddAD = 65014,
+    SpvOpCooperativeVectorLoadAD = 65015,
+    SpvOpCooperativeVectorStoreAD = 65016,
+    SpvOpTypeCooperativeMatrixAD = 65050,
+    SpvOpCooperativeMatrixLoadAD = 65051,
+    SpvOpCooperativeMatrixStoreAD = 65052,
+    SpvOpCooperativeMatrixMulAddAD = 65053,
+    SpvOpCooperativeMatrixLengthAD = 65054,
+    SpvOpCooperativeMatrixReduceAD = 65055,
     SpvOpCooperativeMatrixConvertNV = 5293,
     SpvOpEmitMeshTasksEXT = 5294,
     SpvOpSetMeshOutputsEXT = 5295,
@@ -2045,8 +2053,6 @@ typedef enum SpvOp_ {
     SpvOpFetchMicroTriangleVertexBarycentricNV = 5301,
     SpvOpCooperativeVectorLoadNV = 5302,
     SpvOpCooperativeVectorStoreNV = 5303,
-    SpvOpCooperativeVectorLoadAD = 65015,
-    SpvOpCooperativeVectorStoreAD = 65016,
     SpvOpReportIntersectionKHR = 5334,
     SpvOpReportIntersectionNV = 5334,
     SpvOpIgnoreIntersectionNV = 5335,
@@ -2065,11 +2071,6 @@ typedef enum SpvOp_ {
     SpvOpCooperativeMatrixStoreNV = 5360,
     SpvOpCooperativeMatrixMulAddNV = 5361,
     SpvOpCooperativeMatrixLengthNV = 5362,
-    SpvOpTypeCooperativeMatrixAD = 65050,
-    SpvOpCooperativeMatrixLoadAD = 65051,
-    SpvOpCooperativeMatrixStoreAD = 65052,
-    SpvOpCooperativeMatrixMulAddAD = 65053,
-    SpvOpCooperativeMatrixLengthAD = 65054,
     SpvOpBeginInvocationInterlockEXT = 5364,
     SpvOpEndInvocationInterlockEXT = 5365,
     SpvOpCooperativeMatrixReduceNV = 5366,
@@ -2845,10 +2846,18 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpTypeCooperativeVectorAD: *hasResult = true; *hasResultType = false; break;
     case SpvOpCooperativeVectorMatrixMulNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeVectorMatrixMulAD: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeVectorMatrixMulAddAD: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeVectorLoadAD: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeVectorStoreAD: *hasResult = false; *hasResultType = false; break;
+    case SpvOpTypeCooperativeMatrixAD: *hasResult = true; *hasResultType = false; break;
+    case SpvOpCooperativeMatrixLoadAD: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeMatrixStoreAD: *hasResult = false; *hasResultType = false; break;
+    case SpvOpCooperativeMatrixMulAddAD: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeMatrixLengthAD: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeMatrixReduceAD: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeVectorOuterProductAccumulateNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpCooperativeVectorReduceSumAccumulateNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpCooperativeVectorMatrixMulAddNV: *hasResult = true; *hasResultType = true; break;
-    case SpvOpCooperativeVectorMatrixMulAddAD: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeMatrixConvertNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpEmitMeshTasksEXT: *hasResult = false; *hasResultType = false; break;
     case SpvOpSetMeshOutputsEXT: *hasResult = false; *hasResultType = false; break;
@@ -2857,9 +2866,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpFetchMicroTriangleVertexPositionNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpFetchMicroTriangleVertexBarycentricNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeVectorLoadNV: *hasResult = true; *hasResultType = true; break;
-    case SpvOpCooperativeVectorLoadAD: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeVectorStoreNV: *hasResult = false; *hasResultType = false; break;
-    case SpvOpCooperativeVectorStoreAD: *hasResult = false; *hasResultType = false; break;
     case SpvOpReportIntersectionKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpIgnoreIntersectionNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpTerminateRayNV: *hasResult = false; *hasResultType = false; break;
@@ -2872,15 +2879,10 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpRayQueryGetClusterIdNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpHitObjectGetClusterIdNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpTypeCooperativeMatrixNV: *hasResult = true; *hasResultType = false; break;
-    case SpvOpTypeCooperativeMatrixAD: *hasResult = true; *hasResultType = false; break;
     case SpvOpCooperativeMatrixLoadNV: *hasResult = true; *hasResultType = true; break;
-    case SpvOpCooperativeMatrixLoadAD: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeMatrixStoreNV: *hasResult = false; *hasResultType = false; break;
-    case SpvOpCooperativeMatrixStoreAD: *hasResult = false; *hasResultType = false; break;
     case SpvOpCooperativeMatrixMulAddNV: *hasResult = true; *hasResultType = true; break;
-    case SpvOpCooperativeMatrixMulAddAD: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeMatrixLengthNV: *hasResult = true; *hasResultType = true; break;
-    case SpvOpCooperativeMatrixLengthAD: *hasResult = true; *hasResultType = true; break;
     case SpvOpBeginInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
     case SpvOpEndInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
     case SpvOpCooperativeMatrixReduceNV: *hasResult = true; *hasResultType = true; break;
@@ -4027,6 +4029,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityRayTracingProvisionalKHR: return "RayTracingProvisionalKHR";
     case SpvCapabilityCooperativeMatrixNV: return "CooperativeMatrixNV";
     case SpvCapabilityCooperativeMatrixAD: return "CooperativeMatrixAD";
+    case SpvCapabilityCooperativeVectorAD: return "CooperativeVectorAD";
     case SpvCapabilityFragmentShaderSampleInterlockEXT: return "FragmentShaderSampleInterlockEXT";
     case SpvCapabilityFragmentShaderShadingRateInterlockEXT: return "FragmentShaderShadingRateInterlockEXT";
     case SpvCapabilityShaderSMBuiltinsNV: return "ShaderSMBuiltinsNV";
@@ -4038,7 +4041,6 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityBindlessTextureNV: return "BindlessTextureNV";
     case SpvCapabilityRayQueryPositionFetchKHR: return "RayQueryPositionFetchKHR";
     case SpvCapabilityCooperativeVectorNV: return "CooperativeVectorNV";
-    case SpvCapabilityCooperativeVectorAD: return "CooperativeVectorAD";
     case SpvCapabilityAtomicFloat16VectorNV: return "AtomicFloat16VectorNV";
     case SpvCapabilityRayTracingDisplacementMicromapNV: return "RayTracingDisplacementMicromapNV";
     case SpvCapabilityRawAccessChainsNV: return "RawAccessChainsNV";
@@ -4777,10 +4779,18 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpTypeCooperativeVectorAD: return "OpTypeCooperativeVectorAD";
     case SpvOpCooperativeVectorMatrixMulNV: return "OpCooperativeVectorMatrixMulNV";
     case SpvOpCooperativeVectorMatrixMulAD: return "OpCooperativeVectorMatrixMulAD";
+    case SpvOpCooperativeVectorMatrixMulAddAD: return "OpCooperativeVectorMatrixMulAddAD";
+    case SpvOpCooperativeVectorLoadAD: return "OpCooperativeVectorLoadAD";
+    case SpvOpCooperativeVectorStoreAD: return "OpCooperativeVectorStoreAD";
+    case SpvOpTypeCooperativeMatrixAD: return "OpTypeCooperativeMatrixAD";
+    case SpvOpCooperativeMatrixLoadAD: return "OpCooperativeMatrixLoadAD";
+    case SpvOpCooperativeMatrixStoreAD: return "OpCooperativeMatrixStoreAD";
+    case SpvOpCooperativeMatrixMulAddAD: return "OpCooperativeMatrixMulAddAD";
+    case SpvOpCooperativeMatrixLengthAD: return "OpCooperativeMatrixLengthAD";
+    case SpvOpCooperativeMatrixReduceAD: return "OpCooperativeMatrixReduceAD";
     case SpvOpCooperativeVectorOuterProductAccumulateNV: return "OpCooperativeVectorOuterProductAccumulateNV";
     case SpvOpCooperativeVectorReduceSumAccumulateNV: return "OpCooperativeVectorReduceSumAccumulateNV";
     case SpvOpCooperativeVectorMatrixMulAddNV: return "OpCooperativeVectorMatrixMulAddNV";
-    case SpvOpCooperativeVectorMatrixMulAddAD: return "OpCooperativeVectorMatrixMulAddAD";
     case SpvOpCooperativeMatrixConvertNV: return "OpCooperativeMatrixConvertNV";
     case SpvOpEmitMeshTasksEXT: return "OpEmitMeshTasksEXT";
     case SpvOpSetMeshOutputsEXT: return "OpSetMeshOutputsEXT";
@@ -4789,9 +4799,7 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpFetchMicroTriangleVertexPositionNV: return "OpFetchMicroTriangleVertexPositionNV";
     case SpvOpFetchMicroTriangleVertexBarycentricNV: return "OpFetchMicroTriangleVertexBarycentricNV";
     case SpvOpCooperativeVectorLoadNV: return "OpCooperativeVectorLoadNV";
-    case SpvOpCooperativeVectorLoadAD: return "OpCooperativeVectorLoadAD";
     case SpvOpCooperativeVectorStoreNV: return "OpCooperativeVectorStoreNV";
-    case SpvOpCooperativeVectorStoreAD: return "OpCooperativeVectorStoreAD";
     case SpvOpReportIntersectionKHR: return "OpReportIntersectionKHR";
     case SpvOpIgnoreIntersectionNV: return "OpIgnoreIntersectionNV";
     case SpvOpTerminateRayNV: return "OpTerminateRayNV";
@@ -4804,15 +4812,10 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpRayQueryGetClusterIdNV: return "OpRayQueryGetClusterIdNV";
     case SpvOpHitObjectGetClusterIdNV: return "OpHitObjectGetClusterIdNV";
     case SpvOpTypeCooperativeMatrixNV: return "OpTypeCooperativeMatrixNV";
-    case SpvOpTypeCooperativeMatrixAD: return "OpTypeCooperativeMatrixAD";
     case SpvOpCooperativeMatrixLoadNV: return "OpCooperativeMatrixLoadNV";
-    case SpvOpCooperativeMatrixLoadAD: return "OpCooperativeMatrixLoadAD";
     case SpvOpCooperativeMatrixStoreNV: return "OpCooperativeMatrixStoreNV";
-    case SpvOpCooperativeMatrixStoreAD: return "OpCooperativeMatrixStoreAD";
     case SpvOpCooperativeMatrixMulAddNV: return "OpCooperativeMatrixMulAddNV";
-    case SpvOpCooperativeMatrixMulAddAD: return "OpCooperativeMatrixMulAddAD";
     case SpvOpCooperativeMatrixLengthNV: return "OpCooperativeMatrixLengthNV";
-    case SpvOpCooperativeMatrixLengthAD: return "OpCooperativeMatrixLengthAD";
     case SpvOpBeginInvocationInterlockEXT: return "OpBeginInvocationInterlockEXT";
     case SpvOpEndInvocationInterlockEXT: return "OpEndInvocationInterlockEXT";
     case SpvOpCooperativeMatrixReduceNV: return "OpCooperativeMatrixReduceNV";

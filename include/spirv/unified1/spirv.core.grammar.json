@@ -6027,6 +6027,20 @@
       "version" : "None"
     },
     {
+      "opname" : "OpCooperativeVectorMatrixMulAddAD",
+      "class"  : "Reserved",
+      "opcode" : 65014,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "'Input'" },
+        { "kind" : "IdRef",             "name" : "'Matrix'" },
+        { "kind" : "IdRef",             "name" : "'Bias'" }
+      ],
+      "capabilities" : [ "CooperativeVectorAD" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpCooperativeVectorOuterProductAccumulateNV",
       "class"  : "Reserved",
       "opcode" : 5290,
@@ -6077,20 +6091,6 @@
         { "kind" : "CooperativeMatrixOperands",             "quantifier" : "?" }
       ],
       "capabilities" : [ "CooperativeVectorNV" ],
-      "version" : "None"
-    },
-    {
-      "opname" : "OpCooperativeVectorMatrixMulAddAD",
-      "class"  : "Reserved",
-      "opcode" : 65014,
-      "operands" : [
-        { "kind" : "IdResultType" },
-        { "kind" : "IdResult" },
-        { "kind" : "IdRef",             "name" : "'Input'" },
-        { "kind" : "IdRef",             "name" : "'Matrix'" },
-        { "kind" : "IdRef",             "name" : "'Bias'" }
-      ],
-      "capabilities" : [ "CooperativeVectorAD" ],
       "version" : "None"
     },
     {
@@ -6234,6 +6234,94 @@
         { "kind" : "IdRef",             "name" : "'Object'" }
       ],
       "capabilities" : [ "CooperativeVectorAD" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTypeCooperativeMatrixAD",
+      "class"  : "Type-Declaration",
+      "opcode" : 65050,
+      "operands" : [
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "name" : "'Component Type'" },
+        { "kind" : "IdRef",        "name" : "'Rows'" },
+        { "kind" : "IdRef",        "name" : "'Columns'" }
+      ],
+      "capabilities" : [ "CooperativeMatrixAD" ],
+      "extensions" : [ "SPV_AD_cooperative_matrix" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeMatrixLoadAD",
+      "class"  : "Reserved",
+      "opcode" : 65051,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "'Pointer'" },
+        { "kind" : "IdRef",             "name" : "'Matrix Shape'" },
+        { "kind" : "IdRef",             "name" : "'Matrix Offset'" },
+        { "kind" : "IdRef",             "name" : "'Matrix Layout'" }
+      ],
+      "capabilities" : [ "CooperativeMatrixAD" ],
+      "extensions" : [ "SPV_AD_cooperative_matrix" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeMatrixStoreAD",
+      "class"  : "Reserved",
+      "opcode" : 65052,
+      "operands" : [
+        { "kind" : "IdRef",             "name" : "'Pointer'" },
+        { "kind" : "IdRef",             "name" : "'Object'" },
+        { "kind" : "IdRef",             "name" : "'Matrix Shape'" },
+        { "kind" : "IdRef",             "name" : "'Matrix Offset'" },
+        { "kind" : "IdRef",             "name" : "'Matrix Layout'" }
+      ],
+      "capabilities" : [ "CooperativeMatrixAD" ],
+      "extensions" : [ "SPV_AD_cooperative_matrix" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeMatrixMulAddAD",
+      "class"  : "Reserved",
+      "opcode" : 65053,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "'A'" },
+        { "kind" : "IdRef",             "name" : "'B'" },
+        { "kind" : "IdRef",             "name" : "'C'" }
+      ],
+      "capabilities" : [ "CooperativeMatrixAD" ],
+      "extensions" : [ "SPV_AD_cooperative_matrix" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeMatrixLengthAD",
+      "class"  : "Reserved",
+      "opcode" : 65054,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "name" : "'Type'" }
+      ],
+      "capabilities" : [ "CooperativeMatrixAD" ],
+      "extensions" : [ "SPV_AD_cooperative_matrix" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeMatrixReduceAD",
+      "class"  : "Arithmetic",
+      "opcode" : 65055,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Matrix'" },
+        { "kind" : "IdRef", "name" : "'ReduceMask'" },
+        { "kind" : "IdRef", "name" : "'CombineOp'" }
+      ],
+      "capabilities" : [ "CooperativeMatrixAD" ],
+      "extensions" : [ "SPV_AD_cooperative_matrix" ],
       "version" : "None"
     },
     {
@@ -6426,20 +6514,6 @@
       "version" : "None"
     },
     {
-      "opname" : "OpTypeCooperativeMatrixAD",
-      "class"  : "Type-Declaration",
-      "opcode" : 65050,
-      "operands" : [
-        { "kind" : "IdResult" },
-        { "kind" : "IdRef",        "name" : "'Component Type'" },
-        { "kind" : "IdRef",        "name" : "'Rows'" },
-        { "kind" : "IdRef",        "name" : "'Columns'" }
-      ],
-      "capabilities" : [ "CooperativeMatrixAD" ],
-      "extensions" : [ "SPV_AD_cooperative_matrix" ],
-      "version" : "None"
-    },
-    {
       "opname" : "OpCooperativeMatrixLoadNV",
       "class"  : "Reserved",
       "opcode" : 5359,
@@ -6453,22 +6527,6 @@
       ],
       "capabilities" : [ "CooperativeMatrixNV" ],
       "extensions" : [ "SPV_NV_cooperative_matrix" ],
-      "version" : "None"
-    },
-    {
-      "opname" : "OpCooperativeMatrixLoadAD",
-      "class"  : "Reserved",
-      "opcode" : 65051,
-      "operands" : [
-        { "kind" : "IdResultType" },
-        { "kind" : "IdResult" },
-        { "kind" : "IdRef",             "name" : "'Pointer'" },
-        { "kind" : "IdRef",             "name" : "'Matrix Shape'" },
-        { "kind" : "IdRef",             "name" : "'Matrix Offset'" },
-        { "kind" : "IdRef",             "name" : "'Matrix Layout'" }
-      ],
-      "capabilities" : [ "CooperativeMatrixAD" ],
-      "extensions" : [ "SPV_AD_cooperative_matrix" ],
       "version" : "None"
     },
     {
@@ -6487,21 +6545,6 @@
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeMatrixStoreAD",
-      "class"  : "Reserved",
-      "opcode" : 65052,
-      "operands" : [
-        { "kind" : "IdRef",             "name" : "'Pointer'" },
-        { "kind" : "IdRef",             "name" : "'Object'" },
-        { "kind" : "IdRef",             "name" : "'Matrix Shape'" },
-        { "kind" : "IdRef",             "name" : "'Matrix Offset'" },
-        { "kind" : "IdRef",             "name" : "'Matrix Layout'" }
-      ],
-      "capabilities" : [ "CooperativeMatrixAD" ],
-      "extensions" : [ "SPV_AD_cooperative_matrix" ],
-      "version" : "None"
-    },
-    {
       "opname" : "OpCooperativeMatrixMulAddNV",
       "class"  : "Reserved",
       "opcode" : 5361,
@@ -6517,21 +6560,6 @@
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeMatrixMulAddAD",
-      "class"  : "Reserved",
-      "opcode" : 65053,
-      "operands" : [
-        { "kind" : "IdResultType" },
-        { "kind" : "IdResult" },
-        { "kind" : "IdRef",             "name" : "'A'" },
-        { "kind" : "IdRef",             "name" : "'B'" },
-        { "kind" : "IdRef",             "name" : "'C'" }
-      ],
-      "capabilities" : [ "CooperativeMatrixAD" ],
-      "extensions" : [ "SPV_AD_cooperative_matrix" ],
-      "version" : "None"
-    },
-    {
       "opname" : "OpCooperativeMatrixLengthNV",
       "class"  : "Reserved",
       "opcode" : 5362,
@@ -6542,19 +6570,6 @@
       ],
       "capabilities" : [ "CooperativeMatrixNV" ],
       "extensions" : [ "SPV_NV_cooperative_matrix" ],
-      "version" : "None"
-    },
-    {
-      "opname" : "OpCooperativeMatrixLengthAD",
-      "class"  : "Reserved",
-      "opcode" : 65054,
-      "operands" : [
-        { "kind" : "IdResultType" },
-        { "kind" : "IdResult" },
-        { "kind" : "IdRef",        "name" : "'Type'" }
-      ],
-      "capabilities" : [ "CooperativeMatrixAD" ],
-      "extensions" : [ "SPV_AD_cooperative_matrix" ],
       "version" : "None"
     },
     {
@@ -6585,21 +6600,6 @@
         { "kind" : "IdRef", "name" : "'CombineFunc'" }
       ],
       "capabilities" : [ "CooperativeMatrixReductionsNV" ],
-      "version" : "None"
-    },
-    {
-      "opname" : "OpCooperativeMatrixReduceAD",
-      "class"  : "Arithmetic",
-      "opcode" : 65055,
-      "operands" : [
-        { "kind" : "IdResultType" },
-        { "kind" : "IdResult" },
-        { "kind" : "IdRef", "name" : "'Matrix'" },
-        { "kind" : "IdRef", "name" : "'ReduceMask'" },
-        { "kind" : "IdRef", "name" : "'CombineOp'" }
-      ],
-      "capabilities" : [ "CooperativeMatrixAD" ],
-      "extensions" : [ "SPV_AD_cooperative_matrix" ],
       "version" : "None"
     },
     {
