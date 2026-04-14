@@ -5980,7 +5980,7 @@
       "version" : "None"
     },
     {
-      "opname" : "OpTypeCooperativeVectorAD",
+      "opname" : "OpTypeCooperativeVectorAZD",
       "class"  : "Type-Declaration",
       "opcode" : 65010,
       "operands" : [
@@ -5988,7 +5988,7 @@
         { "kind" : "IdRef",        "name" : "'Component Type'" },
         { "kind" : "IdRef",        "name" : "'Component Count'" }
       ],
-      "capabilities" : [ "CooperativeVectorAD" ],
+      "capabilities" : [ "CooperativeVectorAZD" ],
       "version" : "None"
     },
     {
@@ -6014,7 +6014,7 @@
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeVectorMatrixMulAD",
+      "opname" : "OpCooperativeVectorMatrixMulAZD",
       "class"  : "Reserved",
       "opcode" : 65011,
       "operands" : [
@@ -6023,11 +6023,11 @@
         { "kind" : "IdRef",             "name" : "'Input'" },
         { "kind" : "IdRef",             "name" : "'Matrix'" }
       ],
-      "capabilities" : [ "CooperativeVectorAD" ],
+      "capabilities" : [ "CooperativeVectorAZD" ],
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeVectorMatrixMulAddAD",
+      "opname" : "OpCooperativeVectorMatrixMulAddAZD",
       "class"  : "Reserved",
       "opcode" : 65014,
       "operands" : [
@@ -6037,7 +6037,7 @@
         { "kind" : "IdRef",             "name" : "'Matrix'" },
         { "kind" : "IdRef",             "name" : "'Bias'" }
       ],
-      "capabilities" : [ "CooperativeVectorAD" ],
+      "capabilities" : [ "CooperativeVectorAZD" ],
       "version" : "None"
     },
     {
@@ -6201,7 +6201,7 @@
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeVectorLoadAD",
+      "opname" : "OpCooperativeVectorLoadAZD",
       "class"  : "Memory",
       "opcode" : 65015,
       "operands" : [
@@ -6209,7 +6209,7 @@
         { "kind" : "IdResult" },
         { "kind" : "IdRef",             "name" : "'Pointer'" }
       ],
-      "capabilities" : [ "CooperativeVectorAD" ],
+      "capabilities" : [ "CooperativeVectorAZD" ],
       "version" : "None"
     },
     {
@@ -6226,18 +6226,18 @@
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeVectorStoreAD",
+      "opname" : "OpCooperativeVectorStoreAZD",
       "class"  : "Memory",
       "opcode" : 65016,
       "operands" : [
         { "kind" : "IdRef",             "name" : "'Pointer'" },
         { "kind" : "IdRef",             "name" : "'Object'" }
       ],
-      "capabilities" : [ "CooperativeVectorAD" ],
+      "capabilities" : [ "CooperativeVectorAZD" ],
       "version" : "None"
     },
     {
-      "opname" : "OpTypeCooperativeMatrixAD",
+      "opname" : "OpTypeCooperativeMatrixAZD",
       "class"  : "Type-Declaration",
       "opcode" : 65050,
       "operands" : [
@@ -6246,12 +6246,12 @@
         { "kind" : "IdRef",        "name" : "'Rows'" },
         { "kind" : "IdRef",        "name" : "'Columns'" }
       ],
-      "capabilities" : [ "CooperativeMatrixAD" ],
-      "extensions" : [ "SPV_AD_cooperative_matrix" ],
+      "capabilities" : [ "CooperativeMatrixAZD" ],
+      "extensions" : [ "SPV_AZD_cooperative_matrix" ],
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeMatrixLoadAD",
+      "opname" : "OpCooperativeMatrixLoadAZD",
       "class"  : "Reserved",
       "opcode" : 65051,
       "operands" : [
@@ -6262,12 +6262,12 @@
         { "kind" : "IdRef",             "name" : "'Matrix Offset'" },
         { "kind" : "IdRef",             "name" : "'Matrix Layout'" }
       ],
-      "capabilities" : [ "CooperativeMatrixAD" ],
-      "extensions" : [ "SPV_AD_cooperative_matrix" ],
+      "capabilities" : [ "CooperativeMatrixAZD" ],
+      "extensions" : [ "SPV_AZD_cooperative_matrix" ],
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeMatrixStoreAD",
+      "opname" : "OpCooperativeMatrixStoreAZD",
       "class"  : "Reserved",
       "opcode" : 65052,
       "operands" : [
@@ -6277,12 +6277,12 @@
         { "kind" : "IdRef",             "name" : "'Matrix Offset'" },
         { "kind" : "IdRef",             "name" : "'Matrix Layout'" }
       ],
-      "capabilities" : [ "CooperativeMatrixAD" ],
-      "extensions" : [ "SPV_AD_cooperative_matrix" ],
+      "capabilities" : [ "CooperativeMatrixAZD" ],
+      "extensions" : [ "SPV_AZD_cooperative_matrix" ],
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeMatrixMulAddAD",
+      "opname" : "OpCooperativeMatrixMulAddAZD",
       "class"  : "Reserved",
       "opcode" : 65053,
       "operands" : [
@@ -6292,12 +6292,12 @@
         { "kind" : "IdRef",             "name" : "'B'" },
         { "kind" : "IdRef",             "name" : "'C'" }
       ],
-      "capabilities" : [ "CooperativeMatrixAD" ],
-      "extensions" : [ "SPV_AD_cooperative_matrix" ],
+      "capabilities" : [ "CooperativeMatrixAZD" ],
+      "extensions" : [ "SPV_AZD_cooperative_matrix" ],
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeMatrixLengthAD",
+      "opname" : "OpCooperativeMatrixLengthAZD",
       "class"  : "Reserved",
       "opcode" : 65054,
       "operands" : [
@@ -6305,12 +6305,12 @@
         { "kind" : "IdResult" },
         { "kind" : "IdRef",        "name" : "'Type'" }
       ],
-      "capabilities" : [ "CooperativeMatrixAD" ],
-      "extensions" : [ "SPV_AD_cooperative_matrix" ],
+      "capabilities" : [ "CooperativeMatrixAZD" ],
+      "extensions" : [ "SPV_AZD_cooperative_matrix" ],
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeMatrixReduceAD",
+      "opname" : "OpCooperativeMatrixReduceAZD",
       "class"  : "Arithmetic",
       "opcode" : 65055,
       "operands" : [
@@ -6320,8 +6320,8 @@
         { "kind" : "IdRef", "name" : "'ReduceMask'" },
         { "kind" : "IdRef", "name" : "'CombineOp'" }
       ],
-      "capabilities" : [ "CooperativeMatrixAD" ],
-      "extensions" : [ "SPV_AD_cooperative_matrix" ],
+      "capabilities" : [ "CooperativeMatrixAZD" ],
+      "extensions" : [ "SPV_AZD_cooperative_matrix" ],
       "version" : "None"
     },
     {
@@ -16702,10 +16702,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "CooperativeMatrixAD",
+          "enumerant" : "CooperativeMatrixAZD",
           "value" : 65040,
           "capabilities" : [ "Shader" ],
-          "extensions" : [ "SPV_AD_cooperative_matrix" ],
+          "extensions" : [ "SPV_AZD_cooperative_matrix" ],
           "version" : "None"
         },
         {
@@ -16785,9 +16785,9 @@
           "version" : "None"
         },
         {
-          "enumerant" : "CooperativeVectorAD",
+          "enumerant" : "CooperativeVectorAZD",
           "value" : 65000,
-          "extensions" : [ "SPV_AD_cooperative_vector" ],
+          "extensions" : [ "SPV_AZD_cooperative_vector" ],
           "version" : "None"
         },
         {
