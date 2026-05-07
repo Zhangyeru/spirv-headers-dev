@@ -17542,6 +17542,27 @@
     },
     {
       "category" : "ValueEnum",
+      "kind" : "CooperativeMatrixReduceOpAZD",
+      "enumerants" : [
+        {
+          "enumerant" : "ReduceAddAZD",
+          "value" : 0,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ReduceMinAZD",
+          "value" : 1,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ReduceMaxAZD",
+          "value" : 2,
+          "version" : "None"
+        }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
       "kind" : "TensorClampMode",
       "enumerants" : [
         {

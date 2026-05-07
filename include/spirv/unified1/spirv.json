@@ -1413,6 +1413,16 @@
                 }
             },
             {
+                "Name": "CooperativeMatrixReduceOpAZD",
+                "Type": "Value",
+                "Values":
+                {
+                    "ReduceAddAZD": 0,
+                    "ReduceMinAZD": 1,
+                    "ReduceMaxAZD": 2
+                }
+            },
+            {
                 "Name": "TensorClampMode",
                 "Type": "Value",
                 "Values":

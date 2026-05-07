@@ -1477,6 +1477,14 @@ namespace Spv
             Max = 0x7fffffff,
         }
 
+        [AllowDuplicates, CRepr] public enum CooperativeMatrixReduceOpAZD
+        {
+            ReduceAddAZD = 0,
+            ReduceMinAZD = 1,
+            ReduceMaxAZD = 2,
+            Max = 0x7fffffff,
+        }
+
         [AllowDuplicates, CRepr] public enum CooperativeMatrixReduceMask
         {
             MaskNone = 0,

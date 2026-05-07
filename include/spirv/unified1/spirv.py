@@ -1371,6 +1371,12 @@ spv = {
         'ReduceColumnAZD' : 1,
     },
 
+    'CooperativeMatrixReduceOpAZD' : {
+        'ReduceAddAZD' : 0,
+        'ReduceMinAZD' : 1,
+        'ReduceMaxAZD' : 2,
+    },
+
     'CooperativeMatrixReduceMask' : {
         'MaskNone' : 0,
         'Row' : 0x00000001,

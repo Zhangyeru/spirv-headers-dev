@@ -1479,6 +1479,14 @@ enum CooperativeMatrixReduceShiftAZD : uint
     Max = 0x7fffffff,
 }
 
+enum CooperativeMatrixReduceOpAZD : uint
+{
+    ReduceAddAZD = 0,
+    ReduceMinAZD = 1,
+    ReduceMaxAZD = 2,
+    Max = 0x7fffffff,
+}
+
 enum CooperativeMatrixReduceMask : uint
 {
     MaskNone = 0,

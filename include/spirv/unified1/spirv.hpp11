@@ -1427,6 +1427,13 @@ enum class CooperativeMatrixReduceShiftAZD : unsigned {
     Max = 0x7fffffff,
 };
 
+enum class CooperativeMatrixReduceOpAZD : unsigned {
+    ReduceAddAZD = 0,
+    ReduceMinAZD = 1,
+    ReduceMaxAZD = 2,
+    Max = 0x7fffffff,
+};
+
 enum class CooperativeMatrixReduceMask : unsigned {
     MaskNone = 0,
     Row = 0x00000001,
@@ -4238,6 +4245,15 @@ inline const char* CooperativeMatrixReduceShiftAZDToString(CooperativeMatrixRedu
     switch (value) {
     case CooperativeMatrixReduceShiftAZD::ReduceRowAZD: return "ReduceRowAZD";
     case CooperativeMatrixReduceShiftAZD::ReduceColumnAZD: return "ReduceColumnAZD";
+    default: return "Unknown";
+    }
+}
+
+inline const char* CooperativeMatrixReduceOpAZDToString(CooperativeMatrixReduceOpAZD value) {
+    switch (value) {
+    case CooperativeMatrixReduceOpAZD::ReduceAddAZD: return "ReduceAddAZD";
+    case CooperativeMatrixReduceOpAZD::ReduceMinAZD: return "ReduceMinAZD";
+    case CooperativeMatrixReduceOpAZD::ReduceMaxAZD: return "ReduceMaxAZD";
     default: return "Unknown";
     }
 }

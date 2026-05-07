@@ -1425,6 +1425,13 @@ enum CooperativeMatrixReduceShiftAZD {
     CooperativeMatrixReduceShiftAZDMax = 0x7fffffff,
 };
 
+enum CooperativeMatrixReduceOpAZD {
+    CooperativeMatrixReduceOpAZDReduceAddAZD = 0,
+    CooperativeMatrixReduceOpAZDReduceMinAZD = 1,
+    CooperativeMatrixReduceOpAZDReduceMaxAZD = 2,
+    CooperativeMatrixReduceOpAZDMax = 0x7fffffff,
+};
+
 enum CooperativeMatrixReduceMask {
     CooperativeMatrixReduceMaskNone = 0,
     CooperativeMatrixReduceRowMask = 0x00000001,
@@ -4212,6 +4219,15 @@ inline const char* CooperativeMatrixReduceShiftAZDToString(CooperativeMatrixRedu
     switch (value) {
     case CooperativeMatrixReduceShiftAZDReduceRowAZD: return "ReduceRowAZD";
     case CooperativeMatrixReduceShiftAZDReduceColumnAZD: return "ReduceColumnAZD";
+    default: return "Unknown";
+    }
+}
+
+inline const char* CooperativeMatrixReduceOpAZDToString(CooperativeMatrixReduceOpAZD value) {
+    switch (value) {
+    case CooperativeMatrixReduceOpAZDReduceAddAZD: return "ReduceAddAZD";
+    case CooperativeMatrixReduceOpAZDReduceMinAZD: return "ReduceMinAZD";
+    case CooperativeMatrixReduceOpAZDReduceMaxAZD: return "ReduceMaxAZD";
     default: return "Unknown";
     }
 }
