@@ -6247,7 +6247,7 @@
         { "kind" : "IdRef",        "name" : "'Columns'" }
       ],
       "capabilities" : [ "CooperativeMatrixAZD" ],
-      "extensions" : [ "SPV_AZD_cooperative_matrix" ],
+      "extensions" : [ "SPV_AZD_neural_matrix" ],
       "version" : "None"
     },
     {
@@ -6263,7 +6263,7 @@
         { "kind" : "IdRef",             "name" : "'Matrix Layout'" }
       ],
       "capabilities" : [ "CooperativeMatrixAZD" ],
-      "extensions" : [ "SPV_AZD_cooperative_matrix" ],
+      "extensions" : [ "SPV_AZD_neural_matrix" ],
       "version" : "None"
     },
     {
@@ -6278,7 +6278,7 @@
         { "kind" : "IdRef",             "name" : "'Matrix Layout'" }
       ],
       "capabilities" : [ "CooperativeMatrixAZD" ],
-      "extensions" : [ "SPV_AZD_cooperative_matrix" ],
+      "extensions" : [ "SPV_AZD_neural_matrix" ],
       "version" : "None"
     },
     {
@@ -6293,7 +6293,7 @@
         { "kind" : "IdRef",             "name" : "'C'" }
       ],
       "capabilities" : [ "CooperativeMatrixAZD" ],
-      "extensions" : [ "SPV_AZD_cooperative_matrix" ],
+      "extensions" : [ "SPV_AZD_neural_matrix" ],
       "version" : "None"
     },
     {
@@ -6306,7 +6306,7 @@
         { "kind" : "IdRef",        "name" : "'Type'" }
       ],
       "capabilities" : [ "CooperativeMatrixAZD" ],
-      "extensions" : [ "SPV_AZD_cooperative_matrix" ],
+      "extensions" : [ "SPV_AZD_neural_matrix" ],
       "version" : "None"
     },
     {
@@ -6321,7 +6321,7 @@
         { "kind" : "IdRef", "name" : "'CombineOp'" }
       ],
       "capabilities" : [ "CooperativeMatrixAZD" ],
-      "extensions" : [ "SPV_AZD_cooperative_matrix" ],
+      "extensions" : [ "SPV_AZD_neural_matrix" ],
       "version" : "None"
     },
     {
@@ -16705,7 +16705,7 @@
           "enumerant" : "CooperativeMatrixAZD",
           "value" : 65040,
           "capabilities" : [ "Shader" ],
-          "extensions" : [ "SPV_AZD_cooperative_matrix" ],
+          "extensions" : [ "SPV_AZD_neural_matrix" ],
           "version" : "None"
         },
         {
