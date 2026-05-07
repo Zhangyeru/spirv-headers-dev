@@ -1543,6 +1543,12 @@ enum CooperativeVectorMatrixLayout {
     CooperativeVectorMatrixLayoutMax = 0x7fffffff,
 };
 
+enum CooperativeVectorMatrixLayoutAZD {
+    CooperativeVectorMatrixLayoutAZDRowMajorAZD = 0,
+    CooperativeVectorMatrixLayoutAZDColumnMajorAZD = 1,
+    CooperativeVectorMatrixLayoutAZDMax = 0x7fffffff,
+};
+
 enum ComponentType {
     ComponentTypeFloat16NV = 0,
     ComponentTypeFloat32NV = 1,
@@ -4269,6 +4275,14 @@ inline const char* CooperativeVectorMatrixLayoutToString(CooperativeVectorMatrix
     }
 }
 
+inline const char* CooperativeVectorMatrixLayoutAZDToString(CooperativeVectorMatrixLayoutAZD value) {
+    switch (value) {
+    case CooperativeVectorMatrixLayoutAZDRowMajorAZD: return "RowMajorAZD";
+    case CooperativeVectorMatrixLayoutAZDColumnMajorAZD: return "ColumnMajorAZD";
+    default: return "Unknown";
+    }
+}
+
 inline const char* ComponentTypeToString(ComponentType value) {
     switch (value) {
     case ComponentTypeFloat16NV: return "Float16NV";
@@ -5151,4 +5165,3 @@ inline RawAccessChainOperandsMask operator~(RawAccessChainOperandsMask a) { retu
 }  // end namespace spv
 
 #endif  // #ifndef spirv_HPP
-

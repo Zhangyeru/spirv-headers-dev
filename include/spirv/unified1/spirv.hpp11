@@ -1545,6 +1545,12 @@ enum class CooperativeVectorMatrixLayout : unsigned {
     Max = 0x7fffffff,
 };
 
+enum class CooperativeVectorMatrixLayoutAZD : unsigned {
+    RowMajorAZD = 0,
+    ColumnMajorAZD = 1,
+    Max = 0x7fffffff,
+};
+
 enum class ComponentType : unsigned {
     Float16NV = 0,
     Float32NV = 1,
@@ -4291,6 +4297,14 @@ inline const char* CooperativeVectorMatrixLayoutToString(CooperativeVectorMatrix
     case CooperativeVectorMatrixLayout::ColumnMajorNV: return "ColumnMajorNV";
     case CooperativeVectorMatrixLayout::InferencingOptimalNV: return "InferencingOptimalNV";
     case CooperativeVectorMatrixLayout::TrainingOptimalNV: return "TrainingOptimalNV";
+    default: return "Unknown";
+    }
+}
+
+inline const char* CooperativeVectorMatrixLayoutAZDToString(CooperativeVectorMatrixLayoutAZD value) {
+    switch (value) {
+    case CooperativeVectorMatrixLayoutAZD::RowMajorAZD: return "RowMajorAZD";
+    case CooperativeVectorMatrixLayoutAZD::ColumnMajorAZD: return "ColumnMajorAZD";
     default: return "Unknown";
     }
 }

@@ -1534,6 +1534,12 @@ spv = {
         Max = 0x7fffffff,
     },
 
+    CooperativeVectorMatrixLayoutAZD = {
+        RowMajorAZD = 0,
+        ColumnMajorAZD = 1,
+        Max = 0x7fffffff,
+    },
+
     ComponentType = {
         Float16NV = 0,
         Float32NV = 1,
@@ -2356,4 +2362,3 @@ spv = {
     },
 
 }
-

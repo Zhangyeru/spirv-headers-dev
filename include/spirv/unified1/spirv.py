@@ -1479,6 +1479,11 @@ spv = {
         'TrainingOptimalNV' : 3,
     },
 
+    'CooperativeVectorMatrixLayoutAZD' : {
+        'RowMajorAZD' : 0,
+        'ColumnMajorAZD' : 1,
+    },
+
     'ComponentType' : {
         'Float16NV' : 0,
         'Float32NV' : 1,
@@ -2299,4 +2304,3 @@ spv = {
     },
 
 }
-

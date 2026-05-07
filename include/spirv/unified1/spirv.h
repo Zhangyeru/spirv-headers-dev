@@ -1549,6 +1549,12 @@ typedef enum SpvCooperativeVectorMatrixLayout_ {
     SpvCooperativeVectorMatrixLayoutMax = 0x7fffffff,
 } SpvCooperativeVectorMatrixLayout;
 
+typedef enum SpvCooperativeVectorMatrixLayoutAZD_ {
+    SpvCooperativeVectorMatrixLayoutAZDRowMajorAZD = 0,
+    SpvCooperativeVectorMatrixLayoutAZDColumnMajorAZD = 1,
+    SpvCooperativeVectorMatrixLayoutAZDMax = 0x7fffffff,
+} SpvCooperativeVectorMatrixLayoutAZD;
+
 typedef enum SpvComponentType_ {
     SpvComponentTypeFloat16NV = 0,
     SpvComponentTypeFloat32NV = 1,
@@ -4295,6 +4301,14 @@ inline const char* SpvCooperativeVectorMatrixLayoutToString(SpvCooperativeVector
     case SpvCooperativeVectorMatrixLayoutColumnMajorNV: return "ColumnMajorNV";
     case SpvCooperativeVectorMatrixLayoutInferencingOptimalNV: return "InferencingOptimalNV";
     case SpvCooperativeVectorMatrixLayoutTrainingOptimalNV: return "TrainingOptimalNV";
+    default: return "Unknown";
+    }
+}
+
+inline const char* SpvCooperativeVectorMatrixLayoutAZDToString(SpvCooperativeVectorMatrixLayoutAZD value) {
+    switch (value) {
+    case SpvCooperativeVectorMatrixLayoutAZDRowMajorAZD: return "RowMajorAZD";
+    case SpvCooperativeVectorMatrixLayoutAZDColumnMajorAZD: return "ColumnMajorAZD";
     default: return "Unknown";
     }
 }

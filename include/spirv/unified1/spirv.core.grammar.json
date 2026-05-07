@@ -17795,6 +17795,22 @@
     },
     {
       "category" : "ValueEnum",
+      "kind" : "CooperativeVectorMatrixLayoutAZD",
+      "enumerants" : [
+        {
+          "enumerant" : "RowMajorAZD",
+          "value" : 0,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ColumnMajorAZD",
+          "value" : 1,
+          "version" : "None"
+        }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
       "kind" : "ComponentType",
       "enumerants" : [
         {

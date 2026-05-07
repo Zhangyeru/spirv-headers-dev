@@ -1611,6 +1611,13 @@ enum CooperativeVectorMatrixLayout : uint
     Max = 0x7fffffff,
 }
 
+enum CooperativeVectorMatrixLayoutAZD : uint
+{
+    RowMajorAZD = 0,
+    ColumnMajorAZD = 1,
+    Max = 0x7fffffff,
+}
+
 enum ComponentType : uint
 {
     Float16NV = 0,
@@ -2433,5 +2440,4 @@ enum Op : uint
     OpMaskedScatterINTEL = 6429,
     Max = 0x7fffffff,
 }
-
 

@@ -1609,6 +1609,13 @@ namespace Spv
             Max = 0x7fffffff,
         }
 
+        [AllowDuplicates, CRepr] public enum CooperativeVectorMatrixLayoutAZD
+        {
+            RowMajorAZD = 0,
+            ColumnMajorAZD = 1,
+            Max = 0x7fffffff,
+        }
+
         [AllowDuplicates, CRepr] public enum ComponentType
         {
             Float16NV = 0,
@@ -2433,4 +2440,3 @@ namespace Spv
         }
     }
 }
-
