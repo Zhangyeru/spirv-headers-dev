@@ -1404,6 +1404,15 @@
                 }
             },
             {
+                "Name": "CooperativeMatrixReduceShiftAZD",
+                "Type": "Value",
+                "Values":
+                {
+                    "ReduceRowAZD": 0,
+                    "ReduceColumnAZD": 1
+                }
+            },
+            {
                 "Name": "TensorClampMode",
                 "Type": "Value",
                 "Values":

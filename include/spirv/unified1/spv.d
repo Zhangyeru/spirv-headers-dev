@@ -1472,6 +1472,13 @@ enum CooperativeMatrixReduceShift : uint
     Max = 0x7fffffff,
 }
 
+enum CooperativeMatrixReduceShiftAZD : uint
+{
+    ReduceRowAZD = 0,
+    ReduceColumnAZD = 1,
+    Max = 0x7fffffff,
+}
+
 enum CooperativeMatrixReduceMask : uint
 {
     MaskNone = 0,
@@ -2440,4 +2447,3 @@ enum Op : uint
     OpMaskedScatterINTEL = 6429,
     Max = 0x7fffffff,
 }
-

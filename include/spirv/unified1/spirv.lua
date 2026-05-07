@@ -1410,6 +1410,12 @@ spv = {
         Max = 0x7fffffff,
     },
 
+    CooperativeMatrixReduceShiftAZD = {
+        ReduceRowAZD = 0,
+        ReduceColumnAZD = 1,
+        Max = 0x7fffffff,
+    },
+
     CooperativeMatrixReduceMask = {
         MaskNone = 0,
         Row = 0x00000001,
