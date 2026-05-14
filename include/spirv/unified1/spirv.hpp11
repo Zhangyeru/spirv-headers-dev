@@ -2394,6 +2394,11 @@ enum class Op : unsigned {
     OpMaskedGatherINTEL = 6428,
     OpMaskedScatterINTEL = 6429,
     OpTypeTensorMap = 6466,
+    OpCpAsyncTensorGlobalShared = 6470,
+    OpCpAsyncCommitGroup = 6474,
+    OpCpAsyncWaitGroup = 6475,
+    OpBarrierArrive = 6476,
+    OpBarrierWait = 6477,
     Max = 0x7fffffff,
 };
 
@@ -3204,6 +3209,11 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
     case Op::OpTypeTensorMap: *hasResult = true; *hasResultType = false; break;
+    case Op::OpCpAsyncTensorGlobalShared: *hasResult = false; *hasResultType = false; break;
+    case Op::OpCpAsyncCommitGroup: *hasResult = false; *hasResultType = false; break;
+    case Op::OpCpAsyncWaitGroup: *hasResult = false; *hasResultType = false; break;
+    case Op::OpBarrierArrive: *hasResult = false; *hasResultType = false; break;
+    case Op::OpBarrierWait: *hasResult = false; *hasResultType = false; break;
     }
 }
 inline const char* SourceLanguageToString(SourceLanguage value) {
@@ -5163,6 +5173,11 @@ inline const char* OpToString(Op value) {
     case Op::OpMaskedGatherINTEL: return "OpMaskedGatherINTEL";
     case Op::OpMaskedScatterINTEL: return "OpMaskedScatterINTEL";
     case Op::OpTypeTensorMap: return "OpTypeTensorMap";
+    case Op::OpCpAsyncTensorGlobalShared: return "OpCpAsyncTensorGlobalShared";
+    case Op::OpCpAsyncCommitGroup: return "OpCpAsyncCommitGroup";
+    case Op::OpCpAsyncWaitGroup: return "OpCpAsyncWaitGroup";
+    case Op::OpBarrierArrive: return "OpBarrierArrive";
+    case Op::OpBarrierWait: return "OpBarrierWait";
     default: return "Unknown";
     }
 }

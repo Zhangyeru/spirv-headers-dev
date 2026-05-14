@@ -10889,6 +10889,55 @@
         { "kind" : "LiteralInteger",  "name" : "'Dim'" }
       ],
       "version" : "1.0"
+    },
+    {
+      "opname" : "OpCpAsyncTensorGlobalShared",
+      "class"  : "Memory",
+      "opcode" : 6470,
+      "operands" : [
+        { "kind" : "LiteralInteger",    "name" : "'Dim'" },
+        { "kind" : "IdRef",             "name" : "'DstMem'" },
+        { "kind" : "IdRef",             "name" : "'TensorMap'" },
+        { "kind" : "IdRef",             "name" : "'Coord'" }
+      ],
+      "version" : "1.0"
+    },
+    {
+      "opname" : "OpCpAsyncCommitGroup",
+      "class"  : "Memory",
+      "opcode" : 6474,
+      "operands" : [
+      ],
+      "version" : "1.0"
+    },
+    {
+      "opname" : "OpCpAsyncWaitGroup",
+      "class"  : "Memory",
+      "opcode" : 6475,
+      "operands" : [
+        { "kind" : "LiteralInteger",    "name" : "'N'" }
+      ],
+      "version" : "1.0"
+    },
+    {
+      "opname" : "OpBarrierArrive",
+      "class"  : "Barrier",
+      "opcode" : 6476,
+      "operands" : [
+        { "kind" : "IdRef",             "name" : "'Id'" },
+        { "kind" : "IdRef",             "name" : "'N'" }
+      ],
+      "version" : "1.0"
+    },
+    {
+      "opname" : "OpBarrierWait",
+      "class"  : "Barrier",
+      "opcode" : 6477,
+      "operands" : [
+        { "kind" : "IdRef",             "name" : "'Id'" },
+        { "kind" : "IdRef",             "name" : "'N'" }
+      ],
+      "version" : "1.0"
     }
   ],
   "operand_kinds" : [

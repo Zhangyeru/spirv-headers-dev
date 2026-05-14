@@ -2372,6 +2372,11 @@ spv = {
         OpMaskedGatherINTEL = 6428,
         OpMaskedScatterINTEL = 6429,
         OpTypeTensorMap = 6466,
+        OpCpAsyncTensorGlobalShared = 6470,
+        OpCpAsyncCommitGroup = 6474,
+        OpCpAsyncWaitGroup = 6475,
+        OpBarrierArrive = 6476,
+        OpBarrierWait = 6477,
         Max = 0x7fffffff,
     },
 
