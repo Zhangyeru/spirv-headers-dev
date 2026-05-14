@@ -2375,7 +2375,8 @@
                     "OpGroupLogicalOrKHR": 6407,
                     "OpGroupLogicalXorKHR": 6408,
                     "OpMaskedGatherINTEL": 6428,
-                    "OpMaskedScatterINTEL": 6429
+                    "OpMaskedScatterINTEL": 6429,
+                    "OpTypeTensorMap": 6466
                 }
             }
         ]

@@ -10879,6 +10879,16 @@
       ],
       "capabilities" : [ "MaskedGatherScatterINTEL" ],
       "version" : "None"
+    },
+    {
+      "opname" : "OpTypeTensorMap",
+      "class"  : "Type-Declaration",
+      "opcode" : 6466,
+      "operands" : [
+        { "kind" : "IdResult" },
+        { "kind" : "LiteralInteger",  "name" : "'Dim'" }
+      ],
+      "version" : "1.0"
     }
   ],
   "operand_kinds" : [

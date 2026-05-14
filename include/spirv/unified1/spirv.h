@@ -2397,6 +2397,7 @@ typedef enum SpvOp_ {
     SpvOpGroupLogicalXorKHR = 6408,
     SpvOpMaskedGatherINTEL = 6428,
     SpvOpMaskedScatterINTEL = 6429,
+    SpvOpTypeTensorMap = 6466,
     SpvOpMax = 0x7fffffff,
 } SpvOp;
 
@@ -3206,6 +3207,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpGroupLogicalXorKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
+    case SpvOpTypeTensorMap: *hasResult = true; *hasResultType = false; break;
     }
 }
 inline const char* SpvSourceLanguageToString(SpvSourceLanguage value) {
@@ -5164,6 +5166,7 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpGroupLogicalXorKHR: return "OpGroupLogicalXorKHR";
     case SpvOpMaskedGatherINTEL: return "OpMaskedGatherINTEL";
     case SpvOpMaskedScatterINTEL: return "OpMaskedScatterINTEL";
+    case SpvOpTypeTensorMap: return "OpTypeTensorMap";
     default: return "Unknown";
     }
 }

@@ -2451,6 +2451,7 @@ namespace Spv
             OpGroupLogicalXorKHR = 6408,
             OpMaskedGatherINTEL = 6428,
             OpMaskedScatterINTEL = 6429,
+            OpTypeTensorMap = 6466,
             Max = 0x7fffffff,
         }
     }

@@ -2393,6 +2393,7 @@ enum class Op : unsigned {
     OpGroupLogicalXorKHR = 6408,
     OpMaskedGatherINTEL = 6428,
     OpMaskedScatterINTEL = 6429,
+    OpTypeTensorMap = 6466,
     Max = 0x7fffffff,
 };
 
@@ -3202,6 +3203,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpGroupLogicalXorKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
+    case Op::OpTypeTensorMap: *hasResult = true; *hasResultType = false; break;
     }
 }
 inline const char* SourceLanguageToString(SourceLanguage value) {
@@ -5160,6 +5162,7 @@ inline const char* OpToString(Op value) {
     case Op::OpGroupLogicalXorKHR: return "OpGroupLogicalXorKHR";
     case Op::OpMaskedGatherINTEL: return "OpMaskedGatherINTEL";
     case Op::OpMaskedScatterINTEL: return "OpMaskedScatterINTEL";
+    case Op::OpTypeTensorMap: return "OpTypeTensorMap";
     default: return "Unknown";
     }
 }

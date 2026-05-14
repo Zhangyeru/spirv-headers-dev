@@ -2312,6 +2312,7 @@ spv = {
         'OpGroupLogicalXorKHR' : 6408,
         'OpMaskedGatherINTEL' : 6428,
         'OpMaskedScatterINTEL' : 6429,
+        'OpTypeTensorMap' : 6466,
     },
 
 }
