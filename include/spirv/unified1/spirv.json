@@ -1394,6 +1394,16 @@
                 }
             },
             {
+                "Name": "CooperativeMatrixUseAZD",
+                "Type": "Value",
+                "Values":
+                {
+                    "MatrixUseAAZD": 0,
+                    "MatrixUseBAZD": 1,
+                    "MatrixAccumulatorAZD": 2
+                }
+            },
+            {
                 "Name": "CooperativeMatrixReduce",
                 "Type": "Bit",
                 "Values":

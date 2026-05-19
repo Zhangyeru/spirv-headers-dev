@@ -1462,6 +1462,14 @@ namespace Spv
             Max = 0x7fffffff,
         }
 
+        [AllowDuplicates, CRepr] public enum CooperativeMatrixUseAZD
+        {
+            MatrixUseAAZD = 0,
+            MatrixUseBAZD = 1,
+            MatrixAccumulatorAZD = 2,
+            Max = 0x7fffffff,
+        }
+
         [AllowDuplicates, CRepr] public enum CooperativeMatrixReduceShift
         {
             Row = 0,

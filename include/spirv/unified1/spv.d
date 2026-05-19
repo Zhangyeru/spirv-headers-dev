@@ -1464,6 +1464,14 @@ enum CooperativeMatrixUse : uint
     Max = 0x7fffffff,
 }
 
+enum CooperativeMatrixUseAZD : uint
+{
+    MatrixUseAAZD = 0,
+    MatrixUseBAZD = 1,
+    MatrixAccumulatorAZD = 2,
+    Max = 0x7fffffff,
+}
+
 enum CooperativeMatrixReduceShift : uint
 {
     Row = 0,

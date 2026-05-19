@@ -6244,7 +6244,8 @@
         { "kind" : "IdResult" },
         { "kind" : "IdRef",        "name" : "'Component Type'" },
         { "kind" : "IdRef",        "name" : "'Rows'" },
-        { "kind" : "IdRef",        "name" : "'Columns'" }
+        { "kind" : "IdRef",        "name" : "'Columns'" },
+        { "kind" : "CooperativeMatrixUseAZD", "quantifier" : "?", "name" : "'Use'" }
       ],
       "capabilities" : [ "CooperativeMatrixAZD" ],
       "extensions" : [ "SPV_AZD_neural_matrix" ],
@@ -17557,6 +17558,27 @@
         },
         {
           "enumerant" : "MatrixAccumulatorKHR",
+          "value" : 2,
+          "version" : "None"
+        }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
+      "kind" : "CooperativeMatrixUseAZD",
+      "enumerants" : [
+        {
+          "enumerant" : "MatrixUseAAZD",
+          "value" : 0,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixUseBAZD",
+          "value" : 1,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixAccumulatorAZD",
           "value" : 2,
           "version" : "None"
         }

@@ -1418,6 +1418,13 @@ typedef enum SpvCooperativeMatrixUse_ {
     SpvCooperativeMatrixUseMax = 0x7fffffff,
 } SpvCooperativeMatrixUse;
 
+typedef enum SpvCooperativeMatrixUseAZD_ {
+    SpvCooperativeMatrixUseAZDMatrixUseAAZD = 0,
+    SpvCooperativeMatrixUseAZDMatrixUseBAZD = 1,
+    SpvCooperativeMatrixUseAZDMatrixAccumulatorAZD = 2,
+    SpvCooperativeMatrixUseAZDMax = 0x7fffffff,
+} SpvCooperativeMatrixUseAZD;
+
 typedef enum SpvCooperativeMatrixReduceShift_ {
     SpvCooperativeMatrixReduceRowShift = 0,
     SpvCooperativeMatrixReduceColumnShift = 1,
@@ -4253,6 +4260,15 @@ inline const char* SpvCooperativeMatrixUseToString(SpvCooperativeMatrixUse value
     case SpvCooperativeMatrixUseMatrixAKHR: return "MatrixAKHR";
     case SpvCooperativeMatrixUseMatrixBKHR: return "MatrixBKHR";
     case SpvCooperativeMatrixUseMatrixAccumulatorKHR: return "MatrixAccumulatorKHR";
+    default: return "Unknown";
+    }
+}
+
+inline const char* SpvCooperativeMatrixUseAZDToString(SpvCooperativeMatrixUseAZD value) {
+    switch (value) {
+    case SpvCooperativeMatrixUseAZDMatrixUseAAZD: return "MatrixUseAAZD";
+    case SpvCooperativeMatrixUseAZDMatrixUseBAZD: return "MatrixUseBAZD";
+    case SpvCooperativeMatrixUseAZDMatrixAccumulatorAZD: return "MatrixAccumulatorAZD";
     default: return "Unknown";
     }
 }

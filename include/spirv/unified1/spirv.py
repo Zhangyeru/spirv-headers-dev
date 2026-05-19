@@ -1360,6 +1360,12 @@ spv = {
         'MatrixAccumulatorKHR' : 2,
     },
 
+    'CooperativeMatrixUseAZD' : {
+        'MatrixUseAAZD' : 0,
+        'MatrixUseBAZD' : 1,
+        'MatrixAccumulatorAZD' : 2,
+    },
+
     'CooperativeMatrixReduceShift' : {
         'Row' : 0,
         'Column' : 1,
