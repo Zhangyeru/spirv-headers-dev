@@ -6208,6 +6208,7 @@
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
         { "kind" : "IdRef",             "name" : "'Pointer'" },
+        { "kind" : "IdRef",             "name" : "'Offset'" },
         { "kind" : "MemoryAccess",      "quantifier" : "?" }
       ],
       "capabilities" : [ "CooperativeVectorHW" ],
@@ -6232,6 +6233,7 @@
       "opcode" : 65016,
       "operands" : [
         { "kind" : "IdRef",             "name" : "'Pointer'" },
+        { "kind" : "IdRef",             "name" : "'Offset'" },
         { "kind" : "IdRef",             "name" : "'Object'" },
         { "kind" : "MemoryAccess",      "quantifier" : "?" }
       ],
