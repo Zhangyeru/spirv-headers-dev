@@ -1403,10 +1403,10 @@ spv = {
         Max = 0x7fffffff,
     },
 
-    CooperativeMatrixUseAZD = {
-        MatrixUseAAZD = 0,
-        MatrixUseBAZD = 1,
-        MatrixAccumulatorAZD = 2,
+    CooperativeMatrixUseHW = {
+        MatrixUseAHW = 0,
+        MatrixUseBHW = 1,
+        MatrixAccumulatorHW = 2,
         Max = 0x7fffffff,
     },
 
@@ -1417,16 +1417,16 @@ spv = {
         Max = 0x7fffffff,
     },
 
-    CooperativeMatrixReduceShiftAZD = {
-        ReduceRowAZD = 0,
-        ReduceColumnAZD = 1,
+    CooperativeMatrixReduceShiftHW = {
+        ReduceRowHW = 0,
+        ReduceColumnHW = 1,
         Max = 0x7fffffff,
     },
 
-    CooperativeMatrixReduceOpAZD = {
-        ReduceAddAZD = 0,
-        ReduceMinAZD = 1,
-        ReduceMaxAZD = 2,
+    CooperativeMatrixReduceOpHW = {
+        ReduceAddHW = 0,
+        ReduceMinHW = 1,
+        ReduceMaxHW = 2,
         Max = 0x7fffffff,
     },
 
@@ -1554,9 +1554,9 @@ spv = {
         Max = 0x7fffffff,
     },
 
-    CooperativeVectorMatrixLayoutAZD = {
-        RowMajorAZD = 0,
-        ColumnMajorAZD = 1,
+    CooperativeVectorMatrixLayoutHW = {
+        RowMajorHW = 0,
+        ColumnMajorHW = 1,
         Max = 0x7fffffff,
     },
 

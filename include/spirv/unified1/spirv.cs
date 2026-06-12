@@ -1461,11 +1461,11 @@ namespace Spv
             Max = 0x7fffffff,
         }
 
-        public enum CooperativeMatrixUseAZD
+        public enum CooperativeMatrixUseHW
         {
-            MatrixUseAAZD = 0,
-            MatrixUseBAZD = 1,
-            MatrixAccumulatorAZD = 2,
+            MatrixUseAHW = 0,
+            MatrixUseBHW = 1,
+            MatrixAccumulatorHW = 2,
             Max = 0x7fffffff,
         }
 
@@ -1477,18 +1477,18 @@ namespace Spv
             Max = 0x7fffffff,
         }
 
-        public enum CooperativeMatrixReduceShiftAZD
+        public enum CooperativeMatrixReduceShiftHW
         {
-            ReduceRowAZD = 0,
-            ReduceColumnAZD = 1,
+            ReduceRowHW = 0,
+            ReduceColumnHW = 1,
             Max = 0x7fffffff,
         }
 
-        public enum CooperativeMatrixReduceOpAZD
+        public enum CooperativeMatrixReduceOpHW
         {
-            ReduceAddAZD = 0,
-            ReduceMinAZD = 1,
-            ReduceMaxAZD = 2,
+            ReduceAddHW = 0,
+            ReduceMinHW = 1,
+            ReduceMaxHW = 2,
             Max = 0x7fffffff,
         }
 
@@ -1631,10 +1631,10 @@ namespace Spv
             Max = 0x7fffffff,
         }
 
-        public enum CooperativeVectorMatrixLayoutAZD
+        public enum CooperativeVectorMatrixLayoutHW
         {
-            RowMajorAZD = 0,
-            ColumnMajorAZD = 1,
+            RowMajorHW = 0,
+            ColumnMajorHW = 1,
             Max = 0x7fffffff,
         }
 

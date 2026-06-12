@@ -1464,11 +1464,11 @@ enum CooperativeMatrixUse : uint
     Max = 0x7fffffff,
 }
 
-enum CooperativeMatrixUseAZD : uint
+enum CooperativeMatrixUseHW : uint
 {
-    MatrixUseAAZD = 0,
-    MatrixUseBAZD = 1,
-    MatrixAccumulatorAZD = 2,
+    MatrixUseAHW = 0,
+    MatrixUseBHW = 1,
+    MatrixAccumulatorHW = 2,
     Max = 0x7fffffff,
 }
 
@@ -1480,18 +1480,18 @@ enum CooperativeMatrixReduceShift : uint
     Max = 0x7fffffff,
 }
 
-enum CooperativeMatrixReduceShiftAZD : uint
+enum CooperativeMatrixReduceShiftHW : uint
 {
-    ReduceRowAZD = 0,
-    ReduceColumnAZD = 1,
+    ReduceRowHW = 0,
+    ReduceColumnHW = 1,
     Max = 0x7fffffff,
 }
 
-enum CooperativeMatrixReduceOpAZD : uint
+enum CooperativeMatrixReduceOpHW : uint
 {
-    ReduceAddAZD = 0,
-    ReduceMinAZD = 1,
-    ReduceMaxAZD = 2,
+    ReduceAddHW = 0,
+    ReduceMinHW = 1,
+    ReduceMaxHW = 2,
     Max = 0x7fffffff,
 }
 
@@ -1634,10 +1634,10 @@ enum CooperativeVectorMatrixLayout : uint
     Max = 0x7fffffff,
 }
 
-enum CooperativeVectorMatrixLayoutAZD : uint
+enum CooperativeVectorMatrixLayoutHW : uint
 {
-    RowMajorAZD = 0,
-    ColumnMajorAZD = 1,
+    RowMajorHW = 0,
+    ColumnMajorHW = 1,
     Max = 0x7fffffff,
 }
 

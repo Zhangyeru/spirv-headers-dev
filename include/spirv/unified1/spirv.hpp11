@@ -1164,8 +1164,8 @@ enum class Capability : unsigned {
     ComputeDerivativeGroupLinearNV = 5350,
     RayTracingProvisionalKHR = 5353,
     CooperativeMatrixNV = 5357,
-    CooperativeMatrixAZD = 65040,
-    CooperativeVectorAZD = 65000,
+    CooperativeMatrixHW = 65040,
+    CooperativeVectorHW = 65000,
     FragmentShaderSampleInterlockEXT = 5363,
     FragmentShaderShadingRateInterlockEXT = 5372,
     ShaderSMBuiltinsNV = 5373,
@@ -1414,10 +1414,10 @@ enum class CooperativeMatrixUse : unsigned {
     Max = 0x7fffffff,
 };
 
-enum class CooperativeMatrixUseAZD : unsigned {
-    MatrixUseAAZD = 0,
-    MatrixUseBAZD = 1,
-    MatrixAccumulatorAZD = 2,
+enum class CooperativeMatrixUseHW : unsigned {
+    MatrixUseAHW = 0,
+    MatrixUseBHW = 1,
+    MatrixAccumulatorHW = 2,
     Max = 0x7fffffff,
 };
 
@@ -1428,16 +1428,16 @@ enum class CooperativeMatrixReduceShift : unsigned {
     Max = 0x7fffffff,
 };
 
-enum class CooperativeMatrixReduceShiftAZD : unsigned {
-    ReduceRowAZD = 0,
-    ReduceColumnAZD = 1,
+enum class CooperativeMatrixReduceShiftHW : unsigned {
+    ReduceRowHW = 0,
+    ReduceColumnHW = 1,
     Max = 0x7fffffff,
 };
 
-enum class CooperativeMatrixReduceOpAZD : unsigned {
-    ReduceAddAZD = 0,
-    ReduceMinAZD = 1,
-    ReduceMaxAZD = 2,
+enum class CooperativeMatrixReduceOpHW : unsigned {
+    ReduceAddHW = 0,
+    ReduceMinHW = 1,
+    ReduceMaxHW = 2,
     Max = 0x7fffffff,
 };
 
@@ -1565,9 +1565,9 @@ enum class CooperativeVectorMatrixLayout : unsigned {
     Max = 0x7fffffff,
 };
 
-enum class CooperativeVectorMatrixLayoutAZD : unsigned {
-    RowMajorAZD = 0,
-    ColumnMajorAZD = 1,
+enum class CooperativeVectorMatrixLayoutHW : unsigned {
+    RowMajorHW = 0,
+    ColumnMajorHW = 1,
     Max = 0x7fffffff,
 };
 
@@ -2055,17 +2055,17 @@ enum class Op : unsigned {
     OpCooperativeVectorOuterProductAccumulateNV = 5290,
     OpCooperativeVectorReduceSumAccumulateNV = 5291,
     OpCooperativeVectorMatrixMulAddNV = 5292,
-    OpTypeCooperativeVectorAZD = 65010,
-    OpCooperativeVectorMatrixMulAZD = 65011,
-    OpCooperativeVectorMatrixMulAddAZD = 65014,
-    OpCooperativeVectorLoadAZD = 65015,
-    OpCooperativeVectorStoreAZD = 65016,
-    OpTypeCooperativeMatrixAZD = 65050,
-    OpCooperativeMatrixLoadAZD = 65051,
-    OpCooperativeMatrixStoreAZD = 65052,
-    OpCooperativeMatrixMulAddAZD = 65053,
-    OpCooperativeMatrixLengthAZD = 65054,
-    OpCooperativeMatrixReduceAZD = 65055,
+    OpTypeCooperativeVectorHW = 65010,
+    OpCooperativeVectorMatrixMulHW = 65011,
+    OpCooperativeVectorMatrixMulAddHW = 65014,
+    OpCooperativeVectorLoadHW = 65015,
+    OpCooperativeVectorStoreHW = 65016,
+    OpTypeCooperativeMatrixHW = 65050,
+    OpCooperativeMatrixLoadHW = 65051,
+    OpCooperativeMatrixStoreHW = 65052,
+    OpCooperativeMatrixMulAddHW = 65053,
+    OpCooperativeMatrixLengthHW = 65054,
+    OpCooperativeMatrixReduceHW = 65055,
     OpCooperativeMatrixConvertNV = 5293,
     OpEmitMeshTasksEXT = 5294,
     OpSetMeshOutputsEXT = 5295,
@@ -2871,18 +2871,18 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpTypeHitObjectNV: *hasResult = true; *hasResultType = false; break;
     case Op::OpImageSampleFootprintNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpTypeCooperativeVectorNV: *hasResult = true; *hasResultType = false; break;
-    case Op::OpTypeCooperativeVectorAZD: *hasResult = true; *hasResultType = false; break;
+    case Op::OpTypeCooperativeVectorHW: *hasResult = true; *hasResultType = false; break;
     case Op::OpCooperativeVectorMatrixMulNV: *hasResult = true; *hasResultType = true; break;
-    case Op::OpCooperativeVectorMatrixMulAZD: *hasResult = true; *hasResultType = true; break;
-    case Op::OpCooperativeVectorMatrixMulAddAZD: *hasResult = true; *hasResultType = true; break;
-    case Op::OpCooperativeVectorLoadAZD: *hasResult = true; *hasResultType = true; break;
-    case Op::OpCooperativeVectorStoreAZD: *hasResult = false; *hasResultType = false; break;
-    case Op::OpTypeCooperativeMatrixAZD: *hasResult = true; *hasResultType = false; break;
-    case Op::OpCooperativeMatrixLoadAZD: *hasResult = true; *hasResultType = true; break;
-    case Op::OpCooperativeMatrixStoreAZD: *hasResult = false; *hasResultType = false; break;
-    case Op::OpCooperativeMatrixMulAddAZD: *hasResult = true; *hasResultType = true; break;
-    case Op::OpCooperativeMatrixLengthAZD: *hasResult = true; *hasResultType = true; break;
-    case Op::OpCooperativeMatrixReduceAZD: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeVectorMatrixMulHW: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeVectorMatrixMulAddHW: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeVectorLoadHW: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeVectorStoreHW: *hasResult = false; *hasResultType = false; break;
+    case Op::OpTypeCooperativeMatrixHW: *hasResult = true; *hasResultType = false; break;
+    case Op::OpCooperativeMatrixLoadHW: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeMatrixStoreHW: *hasResult = false; *hasResultType = false; break;
+    case Op::OpCooperativeMatrixMulAddHW: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeMatrixLengthHW: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeMatrixReduceHW: *hasResult = true; *hasResultType = true; break;
     case Op::OpCooperativeVectorOuterProductAccumulateNV: *hasResult = false; *hasResultType = false; break;
     case Op::OpCooperativeVectorReduceSumAccumulateNV: *hasResult = false; *hasResultType = false; break;
     case Op::OpCooperativeVectorMatrixMulAddNV: *hasResult = true; *hasResultType = true; break;
@@ -4062,8 +4062,8 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::ComputeDerivativeGroupLinearKHR: return "ComputeDerivativeGroupLinearKHR";
     case Capability::RayTracingProvisionalKHR: return "RayTracingProvisionalKHR";
     case Capability::CooperativeMatrixNV: return "CooperativeMatrixNV";
-    case Capability::CooperativeMatrixAZD: return "CooperativeMatrixAZD";
-    case Capability::CooperativeVectorAZD: return "CooperativeVectorAZD";
+    case Capability::CooperativeMatrixHW: return "CooperativeMatrixHW";
+    case Capability::CooperativeVectorHW: return "CooperativeVectorHW";
     case Capability::FragmentShaderSampleInterlockEXT: return "FragmentShaderSampleInterlockEXT";
     case Capability::FragmentShaderShadingRateInterlockEXT: return "FragmentShaderShadingRateInterlockEXT";
     case Capability::ShaderSMBuiltinsNV: return "ShaderSMBuiltinsNV";
@@ -4260,28 +4260,28 @@ inline const char* CooperativeMatrixUseToString(CooperativeMatrixUse value) {
     }
 }
 
-inline const char* CooperativeMatrixUseAZDToString(CooperativeMatrixUseAZD value) {
+inline const char* CooperativeMatrixUseHWToString(CooperativeMatrixUseHW value) {
     switch (value) {
-    case CooperativeMatrixUseAZD::MatrixUseAAZD: return "MatrixUseAAZD";
-    case CooperativeMatrixUseAZD::MatrixUseBAZD: return "MatrixUseBAZD";
-    case CooperativeMatrixUseAZD::MatrixAccumulatorAZD: return "MatrixAccumulatorAZD";
+    case CooperativeMatrixUseHW::MatrixUseAHW: return "MatrixUseAHW";
+    case CooperativeMatrixUseHW::MatrixUseBHW: return "MatrixUseBHW";
+    case CooperativeMatrixUseHW::MatrixAccumulatorHW: return "MatrixAccumulatorHW";
     default: return "Unknown";
     }
 }
 
-inline const char* CooperativeMatrixReduceShiftAZDToString(CooperativeMatrixReduceShiftAZD value) {
+inline const char* CooperativeMatrixReduceShiftHWToString(CooperativeMatrixReduceShiftHW value) {
     switch (value) {
-    case CooperativeMatrixReduceShiftAZD::ReduceRowAZD: return "ReduceRowAZD";
-    case CooperativeMatrixReduceShiftAZD::ReduceColumnAZD: return "ReduceColumnAZD";
+    case CooperativeMatrixReduceShiftHW::ReduceRowHW: return "ReduceRowHW";
+    case CooperativeMatrixReduceShiftHW::ReduceColumnHW: return "ReduceColumnHW";
     default: return "Unknown";
     }
 }
 
-inline const char* CooperativeMatrixReduceOpAZDToString(CooperativeMatrixReduceOpAZD value) {
+inline const char* CooperativeMatrixReduceOpHWToString(CooperativeMatrixReduceOpHW value) {
     switch (value) {
-    case CooperativeMatrixReduceOpAZD::ReduceAddAZD: return "ReduceAddAZD";
-    case CooperativeMatrixReduceOpAZD::ReduceMinAZD: return "ReduceMinAZD";
-    case CooperativeMatrixReduceOpAZD::ReduceMaxAZD: return "ReduceMaxAZD";
+    case CooperativeMatrixReduceOpHW::ReduceAddHW: return "ReduceAddHW";
+    case CooperativeMatrixReduceOpHW::ReduceMinHW: return "ReduceMinHW";
+    case CooperativeMatrixReduceOpHW::ReduceMaxHW: return "ReduceMaxHW";
     default: return "Unknown";
     }
 }
@@ -4359,10 +4359,10 @@ inline const char* CooperativeVectorMatrixLayoutToString(CooperativeVectorMatrix
     }
 }
 
-inline const char* CooperativeVectorMatrixLayoutAZDToString(CooperativeVectorMatrixLayoutAZD value) {
+inline const char* CooperativeVectorMatrixLayoutHWToString(CooperativeVectorMatrixLayoutHW value) {
     switch (value) {
-    case CooperativeVectorMatrixLayoutAZD::RowMajorAZD: return "RowMajorAZD";
-    case CooperativeVectorMatrixLayoutAZD::ColumnMajorAZD: return "ColumnMajorAZD";
+    case CooperativeVectorMatrixLayoutHW::RowMajorHW: return "RowMajorHW";
+    case CooperativeVectorMatrixLayoutHW::ColumnMajorHW: return "ColumnMajorHW";
     default: return "Unknown";
     }
 }
@@ -4844,18 +4844,18 @@ inline const char* OpToString(Op value) {
     case Op::OpTypeHitObjectNV: return "OpTypeHitObjectNV";
     case Op::OpImageSampleFootprintNV: return "OpImageSampleFootprintNV";
     case Op::OpTypeCooperativeVectorNV: return "OpTypeCooperativeVectorNV";
-    case Op::OpTypeCooperativeVectorAZD: return "OpTypeCooperativeVectorAZD";
+    case Op::OpTypeCooperativeVectorHW: return "OpTypeCooperativeVectorHW";
     case Op::OpCooperativeVectorMatrixMulNV: return "OpCooperativeVectorMatrixMulNV";
-    case Op::OpCooperativeVectorMatrixMulAZD: return "OpCooperativeVectorMatrixMulAZD";
-    case Op::OpCooperativeVectorMatrixMulAddAZD: return "OpCooperativeVectorMatrixMulAddAZD";
-    case Op::OpCooperativeVectorLoadAZD: return "OpCooperativeVectorLoadAZD";
-    case Op::OpCooperativeVectorStoreAZD: return "OpCooperativeVectorStoreAZD";
-    case Op::OpTypeCooperativeMatrixAZD: return "OpTypeCooperativeMatrixAZD";
-    case Op::OpCooperativeMatrixLoadAZD: return "OpCooperativeMatrixLoadAZD";
-    case Op::OpCooperativeMatrixStoreAZD: return "OpCooperativeMatrixStoreAZD";
-    case Op::OpCooperativeMatrixMulAddAZD: return "OpCooperativeMatrixMulAddAZD";
-    case Op::OpCooperativeMatrixLengthAZD: return "OpCooperativeMatrixLengthAZD";
-    case Op::OpCooperativeMatrixReduceAZD: return "OpCooperativeMatrixReduceAZD";
+    case Op::OpCooperativeVectorMatrixMulHW: return "OpCooperativeVectorMatrixMulHW";
+    case Op::OpCooperativeVectorMatrixMulAddHW: return "OpCooperativeVectorMatrixMulAddHW";
+    case Op::OpCooperativeVectorLoadHW: return "OpCooperativeVectorLoadHW";
+    case Op::OpCooperativeVectorStoreHW: return "OpCooperativeVectorStoreHW";
+    case Op::OpTypeCooperativeMatrixHW: return "OpTypeCooperativeMatrixHW";
+    case Op::OpCooperativeMatrixLoadHW: return "OpCooperativeMatrixLoadHW";
+    case Op::OpCooperativeMatrixStoreHW: return "OpCooperativeMatrixStoreHW";
+    case Op::OpCooperativeMatrixMulAddHW: return "OpCooperativeMatrixMulAddHW";
+    case Op::OpCooperativeMatrixLengthHW: return "OpCooperativeMatrixLengthHW";
+    case Op::OpCooperativeMatrixReduceHW: return "OpCooperativeMatrixReduceHW";
     case Op::OpCooperativeVectorOuterProductAccumulateNV: return "OpCooperativeVectorOuterProductAccumulateNV";
     case Op::OpCooperativeVectorReduceSumAccumulateNV: return "OpCooperativeVectorReduceSumAccumulateNV";
     case Op::OpCooperativeVectorMatrixMulAddNV: return "OpCooperativeVectorMatrixMulAddNV";

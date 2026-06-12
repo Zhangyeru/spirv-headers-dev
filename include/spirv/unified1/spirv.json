@@ -1394,13 +1394,13 @@
                 }
             },
             {
-                "Name": "CooperativeMatrixUseAZD",
+                "Name": "CooperativeMatrixUseHW",
                 "Type": "Value",
                 "Values":
                 {
-                    "MatrixUseAAZD": 0,
-                    "MatrixUseBAZD": 1,
-                    "MatrixAccumulatorAZD": 2
+                    "MatrixUseAHW": 0,
+                    "MatrixUseBHW": 1,
+                    "MatrixAccumulatorHW": 2
                 }
             },
             {
@@ -1414,22 +1414,22 @@
                 }
             },
             {
-                "Name": "CooperativeMatrixReduceShiftAZD",
+                "Name": "CooperativeMatrixReduceShiftHW",
                 "Type": "Value",
                 "Values":
                 {
-                    "ReduceRowAZD": 0,
-                    "ReduceColumnAZD": 1
+                    "ReduceRowHW": 0,
+                    "ReduceColumnHW": 1
                 }
             },
             {
-                "Name": "CooperativeMatrixReduceOpAZD",
+                "Name": "CooperativeMatrixReduceOpHW",
                 "Type": "Value",
                 "Values":
                 {
-                    "ReduceAddAZD": 0,
-                    "ReduceMinAZD": 1,
-                    "ReduceMaxAZD": 2
+                    "ReduceAddHW": 0,
+                    "ReduceMinHW": 1,
+                    "ReduceMaxHW": 2
                 }
             },
             {
@@ -1553,12 +1553,12 @@
                 }
             },
             {
-                "Name": "CooperativeVectorMatrixLayoutAZD",
+                "Name": "CooperativeVectorMatrixLayoutHW",
                 "Type": "Value",
                 "Values":
                 {
-                    "RowMajorAZD": 0,
-                    "ColumnMajorAZD": 1
+                    "RowMajorHW": 0,
+                    "ColumnMajorHW": 1
                 }
             },
             {

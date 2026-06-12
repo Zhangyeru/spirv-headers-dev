@@ -1412,11 +1412,11 @@ enum CooperativeMatrixUse {
     CooperativeMatrixUseMax = 0x7fffffff,
 };
 
-enum CooperativeMatrixUseAZD {
-    CooperativeMatrixUseAZDMatrixUseAAZD = 0,
-    CooperativeMatrixUseAZDMatrixUseBAZD = 1,
-    CooperativeMatrixUseAZDMatrixAccumulatorAZD = 2,
-    CooperativeMatrixUseAZDMax = 0x7fffffff,
+enum CooperativeMatrixUseHW {
+    CooperativeMatrixUseHWMatrixUseAHW = 0,
+    CooperativeMatrixUseHWMatrixUseBHW = 1,
+    CooperativeMatrixUseHWMatrixAccumulatorHW = 2,
+    CooperativeMatrixUseHWMax = 0x7fffffff,
 };
 
 enum CooperativeMatrixReduceShift {
@@ -1426,17 +1426,17 @@ enum CooperativeMatrixReduceShift {
     CooperativeMatrixReduceMax = 0x7fffffff,
 };
 
-enum CooperativeMatrixReduceShiftAZD {
-    CooperativeMatrixReduceShiftAZDReduceRowAZD = 0,
-    CooperativeMatrixReduceShiftAZDReduceColumnAZD = 1,
-    CooperativeMatrixReduceShiftAZDMax = 0x7fffffff,
+enum CooperativeMatrixReduceShiftHW {
+    CooperativeMatrixReduceShiftHWReduceRowHW = 0,
+    CooperativeMatrixReduceShiftHWReduceColumnHW = 1,
+    CooperativeMatrixReduceShiftHWMax = 0x7fffffff,
 };
 
-enum CooperativeMatrixReduceOpAZD {
-    CooperativeMatrixReduceOpAZDReduceAddAZD = 0,
-    CooperativeMatrixReduceOpAZDReduceMinAZD = 1,
-    CooperativeMatrixReduceOpAZDReduceMaxAZD = 2,
-    CooperativeMatrixReduceOpAZDMax = 0x7fffffff,
+enum CooperativeMatrixReduceOpHW {
+    CooperativeMatrixReduceOpHWReduceAddHW = 0,
+    CooperativeMatrixReduceOpHWReduceMinHW = 1,
+    CooperativeMatrixReduceOpHWReduceMaxHW = 2,
+    CooperativeMatrixReduceOpHWMax = 0x7fffffff,
 };
 
 enum CooperativeMatrixReduceMask {
@@ -1563,10 +1563,10 @@ enum CooperativeVectorMatrixLayout {
     CooperativeVectorMatrixLayoutMax = 0x7fffffff,
 };
 
-enum CooperativeVectorMatrixLayoutAZD {
-    CooperativeVectorMatrixLayoutAZDRowMajorAZD = 0,
-    CooperativeVectorMatrixLayoutAZDColumnMajorAZD = 1,
-    CooperativeVectorMatrixLayoutAZDMax = 0x7fffffff,
+enum CooperativeVectorMatrixLayoutHW {
+    CooperativeVectorMatrixLayoutHWRowMajorHW = 0,
+    CooperativeVectorMatrixLayoutHWColumnMajorHW = 1,
+    CooperativeVectorMatrixLayoutHWMax = 0x7fffffff,
 };
 
 enum ComponentType {
@@ -4234,28 +4234,28 @@ inline const char* CooperativeMatrixUseToString(CooperativeMatrixUse value) {
     }
 }
 
-inline const char* CooperativeMatrixUseAZDToString(CooperativeMatrixUseAZD value) {
+inline const char* CooperativeMatrixUseHWToString(CooperativeMatrixUseHW value) {
     switch (value) {
-    case CooperativeMatrixUseAZDMatrixUseAAZD: return "MatrixUseAAZD";
-    case CooperativeMatrixUseAZDMatrixUseBAZD: return "MatrixUseBAZD";
-    case CooperativeMatrixUseAZDMatrixAccumulatorAZD: return "MatrixAccumulatorAZD";
+    case CooperativeMatrixUseHWMatrixUseAHW: return "MatrixUseAHW";
+    case CooperativeMatrixUseHWMatrixUseBHW: return "MatrixUseBHW";
+    case CooperativeMatrixUseHWMatrixAccumulatorHW: return "MatrixAccumulatorHW";
     default: return "Unknown";
     }
 }
 
-inline const char* CooperativeMatrixReduceShiftAZDToString(CooperativeMatrixReduceShiftAZD value) {
+inline const char* CooperativeMatrixReduceShiftHWToString(CooperativeMatrixReduceShiftHW value) {
     switch (value) {
-    case CooperativeMatrixReduceShiftAZDReduceRowAZD: return "ReduceRowAZD";
-    case CooperativeMatrixReduceShiftAZDReduceColumnAZD: return "ReduceColumnAZD";
+    case CooperativeMatrixReduceShiftHWReduceRowHW: return "ReduceRowHW";
+    case CooperativeMatrixReduceShiftHWReduceColumnHW: return "ReduceColumnHW";
     default: return "Unknown";
     }
 }
 
-inline const char* CooperativeMatrixReduceOpAZDToString(CooperativeMatrixReduceOpAZD value) {
+inline const char* CooperativeMatrixReduceOpHWToString(CooperativeMatrixReduceOpHW value) {
     switch (value) {
-    case CooperativeMatrixReduceOpAZDReduceAddAZD: return "ReduceAddAZD";
-    case CooperativeMatrixReduceOpAZDReduceMinAZD: return "ReduceMinAZD";
-    case CooperativeMatrixReduceOpAZDReduceMaxAZD: return "ReduceMaxAZD";
+    case CooperativeMatrixReduceOpHWReduceAddHW: return "ReduceAddHW";
+    case CooperativeMatrixReduceOpHWReduceMinHW: return "ReduceMinHW";
+    case CooperativeMatrixReduceOpHWReduceMaxHW: return "ReduceMaxHW";
     default: return "Unknown";
     }
 }
@@ -4333,10 +4333,10 @@ inline const char* CooperativeVectorMatrixLayoutToString(CooperativeVectorMatrix
     }
 }
 
-inline const char* CooperativeVectorMatrixLayoutAZDToString(CooperativeVectorMatrixLayoutAZD value) {
+inline const char* CooperativeVectorMatrixLayoutHWToString(CooperativeVectorMatrixLayoutHW value) {
     switch (value) {
-    case CooperativeVectorMatrixLayoutAZDRowMajorAZD: return "RowMajorAZD";
-    case CooperativeVectorMatrixLayoutAZDColumnMajorAZD: return "ColumnMajorAZD";
+    case CooperativeVectorMatrixLayoutHWRowMajorHW: return "RowMajorHW";
+    case CooperativeVectorMatrixLayoutHWColumnMajorHW: return "ColumnMajorHW";
     default: return "Unknown";
     }
 }

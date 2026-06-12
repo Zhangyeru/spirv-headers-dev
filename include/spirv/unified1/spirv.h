@@ -1168,8 +1168,8 @@ typedef enum SpvCapability_ {
     SpvCapabilityComputeDerivativeGroupLinearNV = 5350,
     SpvCapabilityRayTracingProvisionalKHR = 5353,
     SpvCapabilityCooperativeMatrixNV = 5357,
-    SpvCapabilityCooperativeMatrixAZD = 65040,
-    SpvCapabilityCooperativeVectorAZD = 65000,
+    SpvCapabilityCooperativeMatrixHW = 65040,
+    SpvCapabilityCooperativeVectorHW = 65000,
     SpvCapabilityFragmentShaderSampleInterlockEXT = 5363,
     SpvCapabilityFragmentShaderShadingRateInterlockEXT = 5372,
     SpvCapabilityShaderSMBuiltinsNV = 5373,
@@ -1418,12 +1418,12 @@ typedef enum SpvCooperativeMatrixUse_ {
     SpvCooperativeMatrixUseMax = 0x7fffffff,
 } SpvCooperativeMatrixUse;
 
-typedef enum SpvCooperativeMatrixUseAZD_ {
-    SpvCooperativeMatrixUseAZDMatrixUseAAZD = 0,
-    SpvCooperativeMatrixUseAZDMatrixUseBAZD = 1,
-    SpvCooperativeMatrixUseAZDMatrixAccumulatorAZD = 2,
-    SpvCooperativeMatrixUseAZDMax = 0x7fffffff,
-} SpvCooperativeMatrixUseAZD;
+typedef enum SpvCooperativeMatrixUseHW_ {
+    SpvCooperativeMatrixUseHWMatrixUseAHW = 0,
+    SpvCooperativeMatrixUseHWMatrixUseBHW = 1,
+    SpvCooperativeMatrixUseHWMatrixAccumulatorHW = 2,
+    SpvCooperativeMatrixUseHWMax = 0x7fffffff,
+} SpvCooperativeMatrixUseHW;
 
 typedef enum SpvCooperativeMatrixReduceShift_ {
     SpvCooperativeMatrixReduceRowShift = 0,
@@ -1432,18 +1432,18 @@ typedef enum SpvCooperativeMatrixReduceShift_ {
     SpvCooperativeMatrixReduceMax = 0x7fffffff,
 } SpvCooperativeMatrixReduceShift;
 
-typedef enum SpvCooperativeMatrixReduceShiftAZD_ {
-    SpvCooperativeMatrixReduceShiftAZDReduceRowAZD = 0,
-    SpvCooperativeMatrixReduceShiftAZDReduceColumnAZD = 1,
-    SpvCooperativeMatrixReduceShiftAZDMax = 0x7fffffff,
-} SpvCooperativeMatrixReduceShiftAZD;
+typedef enum SpvCooperativeMatrixReduceShiftHW_ {
+    SpvCooperativeMatrixReduceShiftHWReduceRowHW = 0,
+    SpvCooperativeMatrixReduceShiftHWReduceColumnHW = 1,
+    SpvCooperativeMatrixReduceShiftHWMax = 0x7fffffff,
+} SpvCooperativeMatrixReduceShiftHW;
 
-typedef enum SpvCooperativeMatrixReduceOpAZD_ {
-    SpvCooperativeMatrixReduceOpAZDReduceAddAZD = 0,
-    SpvCooperativeMatrixReduceOpAZDReduceMinAZD = 1,
-    SpvCooperativeMatrixReduceOpAZDReduceMaxAZD = 2,
-    SpvCooperativeMatrixReduceOpAZDMax = 0x7fffffff,
-} SpvCooperativeMatrixReduceOpAZD;
+typedef enum SpvCooperativeMatrixReduceOpHW_ {
+    SpvCooperativeMatrixReduceOpHWReduceAddHW = 0,
+    SpvCooperativeMatrixReduceOpHWReduceMinHW = 1,
+    SpvCooperativeMatrixReduceOpHWReduceMaxHW = 2,
+    SpvCooperativeMatrixReduceOpHWMax = 0x7fffffff,
+} SpvCooperativeMatrixReduceOpHW;
 
 typedef enum SpvCooperativeMatrixReduceMask_ {
     SpvCooperativeMatrixReduceMaskNone = 0,
@@ -1569,11 +1569,11 @@ typedef enum SpvCooperativeVectorMatrixLayout_ {
     SpvCooperativeVectorMatrixLayoutMax = 0x7fffffff,
 } SpvCooperativeVectorMatrixLayout;
 
-typedef enum SpvCooperativeVectorMatrixLayoutAZD_ {
-    SpvCooperativeVectorMatrixLayoutAZDRowMajorAZD = 0,
-    SpvCooperativeVectorMatrixLayoutAZDColumnMajorAZD = 1,
-    SpvCooperativeVectorMatrixLayoutAZDMax = 0x7fffffff,
-} SpvCooperativeVectorMatrixLayoutAZD;
+typedef enum SpvCooperativeVectorMatrixLayoutHW_ {
+    SpvCooperativeVectorMatrixLayoutHWRowMajorHW = 0,
+    SpvCooperativeVectorMatrixLayoutHWColumnMajorHW = 1,
+    SpvCooperativeVectorMatrixLayoutHWMax = 0x7fffffff,
+} SpvCooperativeVectorMatrixLayoutHW;
 
 typedef enum SpvComponentType_ {
     SpvComponentTypeFloat16NV = 0,
@@ -2059,17 +2059,17 @@ typedef enum SpvOp_ {
     SpvOpCooperativeVectorOuterProductAccumulateNV = 5290,
     SpvOpCooperativeVectorReduceSumAccumulateNV = 5291,
     SpvOpCooperativeVectorMatrixMulAddNV = 5292,
-    SpvOpTypeCooperativeVectorAZD = 65010,
-    SpvOpCooperativeVectorMatrixMulAZD = 65011,
-    SpvOpCooperativeVectorMatrixMulAddAZD = 65014,
-    SpvOpCooperativeVectorLoadAZD = 65015,
-    SpvOpCooperativeVectorStoreAZD = 65016,
-    SpvOpTypeCooperativeMatrixAZD = 65050,
-    SpvOpCooperativeMatrixLoadAZD = 65051,
-    SpvOpCooperativeMatrixStoreAZD = 65052,
-    SpvOpCooperativeMatrixMulAddAZD = 65053,
-    SpvOpCooperativeMatrixLengthAZD = 65054,
-    SpvOpCooperativeMatrixReduceAZD = 65055,
+    SpvOpTypeCooperativeVectorHW = 65010,
+    SpvOpCooperativeVectorMatrixMulHW = 65011,
+    SpvOpCooperativeVectorMatrixMulAddHW = 65014,
+    SpvOpCooperativeVectorLoadHW = 65015,
+    SpvOpCooperativeVectorStoreHW = 65016,
+    SpvOpTypeCooperativeMatrixHW = 65050,
+    SpvOpCooperativeMatrixLoadHW = 65051,
+    SpvOpCooperativeMatrixStoreHW = 65052,
+    SpvOpCooperativeMatrixMulAddHW = 65053,
+    SpvOpCooperativeMatrixLengthHW = 65054,
+    SpvOpCooperativeMatrixReduceHW = 65055,
     SpvOpCooperativeMatrixConvertNV = 5293,
     SpvOpEmitMeshTasksEXT = 5294,
     SpvOpSetMeshOutputsEXT = 5295,
@@ -2875,18 +2875,18 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpTypeHitObjectNV: *hasResult = true; *hasResultType = false; break;
     case SpvOpImageSampleFootprintNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpTypeCooperativeVectorNV: *hasResult = true; *hasResultType = false; break;
-    case SpvOpTypeCooperativeVectorAZD: *hasResult = true; *hasResultType = false; break;
+    case SpvOpTypeCooperativeVectorHW: *hasResult = true; *hasResultType = false; break;
     case SpvOpCooperativeVectorMatrixMulNV: *hasResult = true; *hasResultType = true; break;
-    case SpvOpCooperativeVectorMatrixMulAZD: *hasResult = true; *hasResultType = true; break;
-    case SpvOpCooperativeVectorMatrixMulAddAZD: *hasResult = true; *hasResultType = true; break;
-    case SpvOpCooperativeVectorLoadAZD: *hasResult = true; *hasResultType = true; break;
-    case SpvOpCooperativeVectorStoreAZD: *hasResult = false; *hasResultType = false; break;
-    case SpvOpTypeCooperativeMatrixAZD: *hasResult = true; *hasResultType = false; break;
-    case SpvOpCooperativeMatrixLoadAZD: *hasResult = true; *hasResultType = true; break;
-    case SpvOpCooperativeMatrixStoreAZD: *hasResult = false; *hasResultType = false; break;
-    case SpvOpCooperativeMatrixMulAddAZD: *hasResult = true; *hasResultType = true; break;
-    case SpvOpCooperativeMatrixLengthAZD: *hasResult = true; *hasResultType = true; break;
-    case SpvOpCooperativeMatrixReduceAZD: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeVectorMatrixMulHW: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeVectorMatrixMulAddHW: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeVectorLoadHW: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeVectorStoreHW: *hasResult = false; *hasResultType = false; break;
+    case SpvOpTypeCooperativeMatrixHW: *hasResult = true; *hasResultType = false; break;
+    case SpvOpCooperativeMatrixLoadHW: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeMatrixStoreHW: *hasResult = false; *hasResultType = false; break;
+    case SpvOpCooperativeMatrixMulAddHW: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeMatrixLengthHW: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeMatrixReduceHW: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeVectorOuterProductAccumulateNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpCooperativeVectorReduceSumAccumulateNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpCooperativeVectorMatrixMulAddNV: *hasResult = true; *hasResultType = true; break;
@@ -4066,8 +4066,8 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityComputeDerivativeGroupLinearKHR: return "ComputeDerivativeGroupLinearKHR";
     case SpvCapabilityRayTracingProvisionalKHR: return "RayTracingProvisionalKHR";
     case SpvCapabilityCooperativeMatrixNV: return "CooperativeMatrixNV";
-    case SpvCapabilityCooperativeMatrixAZD: return "CooperativeMatrixAZD";
-    case SpvCapabilityCooperativeVectorAZD: return "CooperativeVectorAZD";
+    case SpvCapabilityCooperativeMatrixHW: return "CooperativeMatrixHW";
+    case SpvCapabilityCooperativeVectorHW: return "CooperativeVectorHW";
     case SpvCapabilityFragmentShaderSampleInterlockEXT: return "FragmentShaderSampleInterlockEXT";
     case SpvCapabilityFragmentShaderShadingRateInterlockEXT: return "FragmentShaderShadingRateInterlockEXT";
     case SpvCapabilityShaderSMBuiltinsNV: return "ShaderSMBuiltinsNV";
@@ -4264,28 +4264,28 @@ inline const char* SpvCooperativeMatrixUseToString(SpvCooperativeMatrixUse value
     }
 }
 
-inline const char* SpvCooperativeMatrixUseAZDToString(SpvCooperativeMatrixUseAZD value) {
+inline const char* SpvCooperativeMatrixUseHWToString(SpvCooperativeMatrixUseHW value) {
     switch (value) {
-    case SpvCooperativeMatrixUseAZDMatrixUseAAZD: return "MatrixUseAAZD";
-    case SpvCooperativeMatrixUseAZDMatrixUseBAZD: return "MatrixUseBAZD";
-    case SpvCooperativeMatrixUseAZDMatrixAccumulatorAZD: return "MatrixAccumulatorAZD";
+    case SpvCooperativeMatrixUseHWMatrixUseAHW: return "MatrixUseAHW";
+    case SpvCooperativeMatrixUseHWMatrixUseBHW: return "MatrixUseBHW";
+    case SpvCooperativeMatrixUseHWMatrixAccumulatorHW: return "MatrixAccumulatorHW";
     default: return "Unknown";
     }
 }
 
-inline const char* SpvCooperativeMatrixReduceShiftAZDToString(SpvCooperativeMatrixReduceShiftAZD value) {
+inline const char* SpvCooperativeMatrixReduceShiftHWToString(SpvCooperativeMatrixReduceShiftHW value) {
     switch (value) {
-    case SpvCooperativeMatrixReduceShiftAZDReduceRowAZD: return "ReduceRowAZD";
-    case SpvCooperativeMatrixReduceShiftAZDReduceColumnAZD: return "ReduceColumnAZD";
+    case SpvCooperativeMatrixReduceShiftHWReduceRowHW: return "ReduceRowHW";
+    case SpvCooperativeMatrixReduceShiftHWReduceColumnHW: return "ReduceColumnHW";
     default: return "Unknown";
     }
 }
 
-inline const char* SpvCooperativeMatrixReduceOpAZDToString(SpvCooperativeMatrixReduceOpAZD value) {
+inline const char* SpvCooperativeMatrixReduceOpHWToString(SpvCooperativeMatrixReduceOpHW value) {
     switch (value) {
-    case SpvCooperativeMatrixReduceOpAZDReduceAddAZD: return "ReduceAddAZD";
-    case SpvCooperativeMatrixReduceOpAZDReduceMinAZD: return "ReduceMinAZD";
-    case SpvCooperativeMatrixReduceOpAZDReduceMaxAZD: return "ReduceMaxAZD";
+    case SpvCooperativeMatrixReduceOpHWReduceAddHW: return "ReduceAddHW";
+    case SpvCooperativeMatrixReduceOpHWReduceMinHW: return "ReduceMinHW";
+    case SpvCooperativeMatrixReduceOpHWReduceMaxHW: return "ReduceMaxHW";
     default: return "Unknown";
     }
 }
@@ -4363,10 +4363,10 @@ inline const char* SpvCooperativeVectorMatrixLayoutToString(SpvCooperativeVector
     }
 }
 
-inline const char* SpvCooperativeVectorMatrixLayoutAZDToString(SpvCooperativeVectorMatrixLayoutAZD value) {
+inline const char* SpvCooperativeVectorMatrixLayoutHWToString(SpvCooperativeVectorMatrixLayoutHW value) {
     switch (value) {
-    case SpvCooperativeVectorMatrixLayoutAZDRowMajorAZD: return "RowMajorAZD";
-    case SpvCooperativeVectorMatrixLayoutAZDColumnMajorAZD: return "ColumnMajorAZD";
+    case SpvCooperativeVectorMatrixLayoutHWRowMajorHW: return "RowMajorHW";
+    case SpvCooperativeVectorMatrixLayoutHWColumnMajorHW: return "ColumnMajorHW";
     default: return "Unknown";
     }
 }
@@ -4848,18 +4848,18 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpTypeHitObjectNV: return "OpTypeHitObjectNV";
     case SpvOpImageSampleFootprintNV: return "OpImageSampleFootprintNV";
     case SpvOpTypeCooperativeVectorNV: return "OpTypeCooperativeVectorNV";
-    case SpvOpTypeCooperativeVectorAZD: return "OpTypeCooperativeVectorAZD";
+    case SpvOpTypeCooperativeVectorHW: return "OpTypeCooperativeVectorHW";
     case SpvOpCooperativeVectorMatrixMulNV: return "OpCooperativeVectorMatrixMulNV";
-    case SpvOpCooperativeVectorMatrixMulAZD: return "OpCooperativeVectorMatrixMulAZD";
-    case SpvOpCooperativeVectorMatrixMulAddAZD: return "OpCooperativeVectorMatrixMulAddAZD";
-    case SpvOpCooperativeVectorLoadAZD: return "OpCooperativeVectorLoadAZD";
-    case SpvOpCooperativeVectorStoreAZD: return "OpCooperativeVectorStoreAZD";
-    case SpvOpTypeCooperativeMatrixAZD: return "OpTypeCooperativeMatrixAZD";
-    case SpvOpCooperativeMatrixLoadAZD: return "OpCooperativeMatrixLoadAZD";
-    case SpvOpCooperativeMatrixStoreAZD: return "OpCooperativeMatrixStoreAZD";
-    case SpvOpCooperativeMatrixMulAddAZD: return "OpCooperativeMatrixMulAddAZD";
-    case SpvOpCooperativeMatrixLengthAZD: return "OpCooperativeMatrixLengthAZD";
-    case SpvOpCooperativeMatrixReduceAZD: return "OpCooperativeMatrixReduceAZD";
+    case SpvOpCooperativeVectorMatrixMulHW: return "OpCooperativeVectorMatrixMulHW";
+    case SpvOpCooperativeVectorMatrixMulAddHW: return "OpCooperativeVectorMatrixMulAddHW";
+    case SpvOpCooperativeVectorLoadHW: return "OpCooperativeVectorLoadHW";
+    case SpvOpCooperativeVectorStoreHW: return "OpCooperativeVectorStoreHW";
+    case SpvOpTypeCooperativeMatrixHW: return "OpTypeCooperativeMatrixHW";
+    case SpvOpCooperativeMatrixLoadHW: return "OpCooperativeMatrixLoadHW";
+    case SpvOpCooperativeMatrixStoreHW: return "OpCooperativeMatrixStoreHW";
+    case SpvOpCooperativeMatrixMulAddHW: return "OpCooperativeMatrixMulAddHW";
+    case SpvOpCooperativeMatrixLengthHW: return "OpCooperativeMatrixLengthHW";
+    case SpvOpCooperativeMatrixReduceHW: return "OpCooperativeMatrixReduceHW";
     case SpvOpCooperativeVectorOuterProductAccumulateNV: return "OpCooperativeVectorOuterProductAccumulateNV";
     case SpvOpCooperativeVectorReduceSumAccumulateNV: return "OpCooperativeVectorReduceSumAccumulateNV";
     case SpvOpCooperativeVectorMatrixMulAddNV: return "OpCooperativeVectorMatrixMulAddNV";

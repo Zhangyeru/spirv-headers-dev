@@ -1360,10 +1360,10 @@ spv = {
         'MatrixAccumulatorKHR' : 2,
     },
 
-    'CooperativeMatrixUseAZD' : {
-        'MatrixUseAAZD' : 0,
-        'MatrixUseBAZD' : 1,
-        'MatrixAccumulatorAZD' : 2,
+    'CooperativeMatrixUseHW' : {
+        'MatrixUseAHW' : 0,
+        'MatrixUseBHW' : 1,
+        'MatrixAccumulatorHW' : 2,
     },
 
     'CooperativeMatrixReduceShift' : {
@@ -1372,15 +1372,15 @@ spv = {
         'CooperativeMatrixReduce2x2' : 2,
     },
 
-    'CooperativeMatrixReduceShiftAZD' : {
-        'ReduceRowAZD' : 0,
-        'ReduceColumnAZD' : 1,
+    'CooperativeMatrixReduceShiftHW' : {
+        'ReduceRowHW' : 0,
+        'ReduceColumnHW' : 1,
     },
 
-    'CooperativeMatrixReduceOpAZD' : {
-        'ReduceAddAZD' : 0,
-        'ReduceMinAZD' : 1,
-        'ReduceMaxAZD' : 2,
+    'CooperativeMatrixReduceOpHW' : {
+        'ReduceAddHW' : 0,
+        'ReduceMinHW' : 1,
+        'ReduceMaxHW' : 2,
     },
 
     'CooperativeMatrixReduceMask' : {
@@ -1496,9 +1496,9 @@ spv = {
         'TrainingOptimalNV' : 3,
     },
 
-    'CooperativeVectorMatrixLayoutAZD' : {
-        'RowMajorAZD' : 0,
-        'ColumnMajorAZD' : 1,
+    'CooperativeVectorMatrixLayoutHW' : {
+        'RowMajorHW' : 0,
+        'ColumnMajorHW' : 1,
     },
 
     'ComponentType' : {

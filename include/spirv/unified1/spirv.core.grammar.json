@@ -5980,7 +5980,7 @@
       "version" : "None"
     },
     {
-      "opname" : "OpTypeCooperativeVectorAZD",
+      "opname" : "OpTypeCooperativeVectorHW",
       "class"  : "Type-Declaration",
       "opcode" : 65010,
       "operands" : [
@@ -5988,7 +5988,7 @@
         { "kind" : "IdRef",        "name" : "'Component Type'" },
         { "kind" : "IdRef",        "name" : "'Component Count'" }
       ],
-      "capabilities" : [ "CooperativeVectorAZD" ],
+      "capabilities" : [ "CooperativeVectorHW" ],
       "version" : "None"
     },
     {
@@ -6014,7 +6014,7 @@
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeVectorMatrixMulAZD",
+      "opname" : "OpCooperativeVectorMatrixMulHW",
       "class"  : "Reserved",
       "opcode" : 65011,
       "operands" : [
@@ -6023,11 +6023,11 @@
         { "kind" : "IdRef",             "name" : "'Input'" },
         { "kind" : "IdRef",             "name" : "'Matrix'" }
       ],
-      "capabilities" : [ "CooperativeVectorAZD" ],
+      "capabilities" : [ "CooperativeVectorHW" ],
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeVectorMatrixMulAddAZD",
+      "opname" : "OpCooperativeVectorMatrixMulAddHW",
       "class"  : "Reserved",
       "opcode" : 65014,
       "operands" : [
@@ -6037,7 +6037,7 @@
         { "kind" : "IdRef",             "name" : "'Matrix'" },
         { "kind" : "IdRef",             "name" : "'Bias'" }
       ],
-      "capabilities" : [ "CooperativeVectorAZD" ],
+      "capabilities" : [ "CooperativeVectorHW" ],
       "version" : "None"
     },
     {
@@ -6201,7 +6201,7 @@
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeVectorLoadAZD",
+      "opname" : "OpCooperativeVectorLoadHW",
       "class"  : "Memory",
       "opcode" : 65015,
       "operands" : [
@@ -6209,7 +6209,7 @@
         { "kind" : "IdResult" },
         { "kind" : "IdRef",             "name" : "'Pointer'" }
       ],
-      "capabilities" : [ "CooperativeVectorAZD" ],
+      "capabilities" : [ "CooperativeVectorHW" ],
       "version" : "None"
     },
     {
@@ -6226,18 +6226,18 @@
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeVectorStoreAZD",
+      "opname" : "OpCooperativeVectorStoreHW",
       "class"  : "Memory",
       "opcode" : 65016,
       "operands" : [
         { "kind" : "IdRef",             "name" : "'Pointer'" },
         { "kind" : "IdRef",             "name" : "'Object'" }
       ],
-      "capabilities" : [ "CooperativeVectorAZD" ],
+      "capabilities" : [ "CooperativeVectorHW" ],
       "version" : "None"
     },
     {
-      "opname" : "OpTypeCooperativeMatrixAZD",
+      "opname" : "OpTypeCooperativeMatrixHW",
       "class"  : "Type-Declaration",
       "opcode" : 65050,
       "operands" : [
@@ -6245,14 +6245,14 @@
         { "kind" : "IdRef",        "name" : "'Component Type'" },
         { "kind" : "IdRef",        "name" : "'Rows'" },
         { "kind" : "IdRef",        "name" : "'Columns'" },
-        { "kind" : "CooperativeMatrixUseAZD", "quantifier" : "?", "name" : "'Use'" }
+        { "kind" : "CooperativeMatrixUseHW", "quantifier" : "?", "name" : "'Use'" }
       ],
-      "capabilities" : [ "CooperativeMatrixAZD" ],
-      "extensions" : [ "SPV_AZD_neural_matrix" ],
+      "capabilities" : [ "CooperativeMatrixHW" ],
+      "extensions" : [ "SPV_HW_neural_matrix" ],
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeMatrixLoadAZD",
+      "opname" : "OpCooperativeMatrixLoadHW",
       "class"  : "Reserved",
       "opcode" : 65051,
       "operands" : [
@@ -6263,12 +6263,12 @@
         { "kind" : "IdRef",             "name" : "'Matrix Offset'" },
         { "kind" : "IdRef",             "name" : "'Matrix Layout'" }
       ],
-      "capabilities" : [ "CooperativeMatrixAZD" ],
-      "extensions" : [ "SPV_AZD_neural_matrix" ],
+      "capabilities" : [ "CooperativeMatrixHW" ],
+      "extensions" : [ "SPV_HW_neural_matrix" ],
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeMatrixStoreAZD",
+      "opname" : "OpCooperativeMatrixStoreHW",
       "class"  : "Reserved",
       "opcode" : 65052,
       "operands" : [
@@ -6278,12 +6278,12 @@
         { "kind" : "IdRef",             "name" : "'Matrix Offset'" },
         { "kind" : "IdRef",             "name" : "'Matrix Layout'" }
       ],
-      "capabilities" : [ "CooperativeMatrixAZD" ],
-      "extensions" : [ "SPV_AZD_neural_matrix" ],
+      "capabilities" : [ "CooperativeMatrixHW" ],
+      "extensions" : [ "SPV_HW_neural_matrix" ],
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeMatrixMulAddAZD",
+      "opname" : "OpCooperativeMatrixMulAddHW",
       "class"  : "Reserved",
       "opcode" : 65053,
       "operands" : [
@@ -6293,12 +6293,12 @@
         { "kind" : "IdRef",             "name" : "'B'" },
         { "kind" : "IdRef",             "name" : "'C'" }
       ],
-      "capabilities" : [ "CooperativeMatrixAZD" ],
-      "extensions" : [ "SPV_AZD_neural_matrix" ],
+      "capabilities" : [ "CooperativeMatrixHW" ],
+      "extensions" : [ "SPV_HW_neural_matrix" ],
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeMatrixLengthAZD",
+      "opname" : "OpCooperativeMatrixLengthHW",
       "class"  : "Reserved",
       "opcode" : 65054,
       "operands" : [
@@ -6306,12 +6306,12 @@
         { "kind" : "IdResult" },
         { "kind" : "IdRef",        "name" : "'Type'" }
       ],
-      "capabilities" : [ "CooperativeMatrixAZD" ],
-      "extensions" : [ "SPV_AZD_neural_matrix" ],
+      "capabilities" : [ "CooperativeMatrixHW" ],
+      "extensions" : [ "SPV_HW_neural_matrix" ],
       "version" : "None"
     },
     {
-      "opname" : "OpCooperativeMatrixReduceAZD",
+      "opname" : "OpCooperativeMatrixReduceHW",
       "class"  : "Arithmetic",
       "opcode" : 65055,
       "operands" : [
@@ -6321,8 +6321,8 @@
         { "kind" : "IdRef", "name" : "'ReduceMask'" },
         { "kind" : "IdRef", "name" : "'CombineOp'" }
       ],
-      "capabilities" : [ "CooperativeMatrixAZD" ],
-      "extensions" : [ "SPV_AZD_neural_matrix" ],
+      "capabilities" : [ "CooperativeMatrixHW" ],
+      "extensions" : [ "SPV_HW_neural_matrix" ],
       "version" : "None"
     },
     {
@@ -16762,10 +16762,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "CooperativeMatrixAZD",
+          "enumerant" : "CooperativeMatrixHW",
           "value" : 65040,
           "capabilities" : [ "Shader" ],
-          "extensions" : [ "SPV_AZD_neural_matrix" ],
+          "extensions" : [ "SPV_HW_neural_matrix" ],
           "version" : "None"
         },
         {
@@ -16845,9 +16845,9 @@
           "version" : "None"
         },
         {
-          "enumerant" : "CooperativeVectorAZD",
+          "enumerant" : "CooperativeVectorHW",
           "value" : 65000,
-          "extensions" : [ "SPV_AZD_cooperative_vector" ],
+          "extensions" : [ "SPV_HW_cooperative_vector" ],
           "version" : "None"
         },
         {
@@ -17565,20 +17565,20 @@
     },
     {
       "category" : "ValueEnum",
-      "kind" : "CooperativeMatrixUseAZD",
+      "kind" : "CooperativeMatrixUseHW",
       "enumerants" : [
         {
-          "enumerant" : "MatrixUseAAZD",
+          "enumerant" : "MatrixUseAHW",
           "value" : 0,
           "version" : "None"
         },
         {
-          "enumerant" : "MatrixUseBAZD",
+          "enumerant" : "MatrixUseBHW",
           "value" : 1,
           "version" : "None"
         },
         {
-          "enumerant" : "MatrixAccumulatorAZD",
+          "enumerant" : "MatrixAccumulatorHW",
           "value" : 2,
           "version" : "None"
         }
@@ -17607,15 +17607,15 @@
     },
     {
       "category" : "ValueEnum",
-      "kind" : "CooperativeMatrixReduceShiftAZD",
+      "kind" : "CooperativeMatrixReduceShiftHW",
       "enumerants" : [
         {
-          "enumerant" : "ReduceRowAZD",
+          "enumerant" : "ReduceRowHW",
           "value" : 0,
           "version" : "None"
         },
         {
-          "enumerant" : "ReduceColumnAZD",
+          "enumerant" : "ReduceColumnHW",
           "value" : 1,
           "version" : "None"
         }
@@ -17623,20 +17623,20 @@
     },
     {
       "category" : "ValueEnum",
-      "kind" : "CooperativeMatrixReduceOpAZD",
+      "kind" : "CooperativeMatrixReduceOpHW",
       "enumerants" : [
         {
-          "enumerant" : "ReduceAddAZD",
+          "enumerant" : "ReduceAddHW",
           "value" : 0,
           "version" : "None"
         },
         {
-          "enumerant" : "ReduceMinAZD",
+          "enumerant" : "ReduceMinHW",
           "value" : 1,
           "version" : "None"
         },
         {
-          "enumerant" : "ReduceMaxAZD",
+          "enumerant" : "ReduceMaxHW",
           "value" : 2,
           "version" : "None"
         }
@@ -17913,15 +17913,15 @@
     },
     {
       "category" : "ValueEnum",
-      "kind" : "CooperativeVectorMatrixLayoutAZD",
+      "kind" : "CooperativeVectorMatrixLayoutHW",
       "enumerants" : [
         {
-          "enumerant" : "RowMajorAZD",
+          "enumerant" : "RowMajorHW",
           "value" : 0,
           "version" : "None"
         },
         {
-          "enumerant" : "ColumnMajorAZD",
+          "enumerant" : "ColumnMajorHW",
           "value" : 1,
           "version" : "None"
         }
