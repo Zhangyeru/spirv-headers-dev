@@ -6250,7 +6250,7 @@
         { "kind" : "CooperativeMatrixUseHW", "quantifier" : "?", "name" : "'Use'" }
       ],
       "capabilities" : [ "CooperativeMatrixHW" ],
-      "extensions" : [ "SPV_HW_neural_matrix" ],
+      "extensions" : [ "SPV_HW_neural_shader" ],
       "version" : "None"
     },
     {
@@ -6267,7 +6267,7 @@
         { "kind" : "MemoryAccess",      "quantifier" : "?" }
       ],
       "capabilities" : [ "CooperativeMatrixHW" ],
-      "extensions" : [ "SPV_HW_neural_matrix" ],
+      "extensions" : [ "SPV_HW_neural_shader" ],
       "version" : "None"
     },
     {
@@ -6283,7 +6283,7 @@
         { "kind" : "MemoryAccess",      "quantifier" : "?" }
       ],
       "capabilities" : [ "CooperativeMatrixHW" ],
-      "extensions" : [ "SPV_HW_neural_matrix" ],
+      "extensions" : [ "SPV_HW_neural_shader" ],
       "version" : "None"
     },
     {
@@ -6298,7 +6298,7 @@
         { "kind" : "IdRef",             "name" : "'C'" }
       ],
       "capabilities" : [ "CooperativeMatrixHW" ],
-      "extensions" : [ "SPV_HW_neural_matrix" ],
+      "extensions" : [ "SPV_HW_neural_shader" ],
       "version" : "None"
     },
     {
@@ -6311,7 +6311,7 @@
         { "kind" : "IdRef",        "name" : "'Type'" }
       ],
       "capabilities" : [ "CooperativeMatrixHW" ],
-      "extensions" : [ "SPV_HW_neural_matrix" ],
+      "extensions" : [ "SPV_HW_neural_shader" ],
       "version" : "None"
     },
     {
@@ -6326,7 +6326,7 @@
         { "kind" : "IdRef", "name" : "'CombineOp'" }
       ],
       "capabilities" : [ "CooperativeMatrixHW" ],
-      "extensions" : [ "SPV_HW_neural_matrix" ],
+      "extensions" : [ "SPV_HW_neural_shader" ],
       "version" : "None"
     },
     {
@@ -16769,7 +16769,7 @@
           "enumerant" : "CooperativeMatrixHW",
           "value" : 65040,
           "capabilities" : [ "Shader" ],
-          "extensions" : [ "SPV_HW_neural_matrix" ],
+          "extensions" : [ "SPV_HW_neural_shader" ],
           "version" : "None"
         },
         {
@@ -16851,7 +16851,7 @@
         {
           "enumerant" : "CooperativeVectorHW",
           "value" : 65000,
-          "extensions" : [ "SPV_HW_cooperative_vector" ],
+          "extensions" : [ "SPV_HW_neural_shader" ],
           "version" : "None"
         },
         {
