@@ -6207,7 +6207,8 @@
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
-        { "kind" : "IdRef",             "name" : "'Pointer'" }
+        { "kind" : "IdRef",             "name" : "'Pointer'" },
+        { "kind" : "MemoryAccess",      "quantifier" : "?" }
       ],
       "capabilities" : [ "CooperativeVectorHW" ],
       "version" : "None"
@@ -6231,7 +6232,8 @@
       "opcode" : 65016,
       "operands" : [
         { "kind" : "IdRef",             "name" : "'Pointer'" },
-        { "kind" : "IdRef",             "name" : "'Object'" }
+        { "kind" : "IdRef",             "name" : "'Object'" },
+        { "kind" : "MemoryAccess",      "quantifier" : "?" }
       ],
       "capabilities" : [ "CooperativeVectorHW" ],
       "version" : "None"
@@ -6261,7 +6263,8 @@
         { "kind" : "IdRef",             "name" : "'Pointer'" },
         { "kind" : "IdRef",             "name" : "'Matrix Shape'" },
         { "kind" : "IdRef",             "name" : "'Matrix Offset'" },
-        { "kind" : "IdRef",             "name" : "'Matrix Layout'" }
+        { "kind" : "IdRef",             "name" : "'Matrix Layout'" },
+        { "kind" : "MemoryAccess",      "quantifier" : "?" }
       ],
       "capabilities" : [ "CooperativeMatrixHW" ],
       "extensions" : [ "SPV_HW_neural_matrix" ],
@@ -6276,7 +6279,8 @@
         { "kind" : "IdRef",             "name" : "'Object'" },
         { "kind" : "IdRef",             "name" : "'Matrix Shape'" },
         { "kind" : "IdRef",             "name" : "'Matrix Offset'" },
-        { "kind" : "IdRef",             "name" : "'Matrix Layout'" }
+        { "kind" : "IdRef",             "name" : "'Matrix Layout'" },
+        { "kind" : "MemoryAccess",      "quantifier" : "?" }
       ],
       "capabilities" : [ "CooperativeMatrixHW" ],
       "extensions" : [ "SPV_HW_neural_matrix" ],
