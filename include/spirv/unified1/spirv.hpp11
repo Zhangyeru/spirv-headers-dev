@@ -2406,6 +2406,9 @@ enum class Op : unsigned {
     OpCpAsyncWaitGroup = 6475,
     OpBarrierArrive = 6476,
     OpBarrierWait = 6477,
+    OpShuffleIndex = 6478,
+    OpBytePermute = 6479,
+    OpShuffleFillDown = 6480,
     Max = 0x7fffffff,
 };
 
@@ -3221,6 +3224,9 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpCpAsyncWaitGroup: *hasResult = false; *hasResultType = false; break;
     case Op::OpBarrierArrive: *hasResult = false; *hasResultType = false; break;
     case Op::OpBarrierWait: *hasResult = false; *hasResultType = false; break;
+    case Op::OpShuffleIndex: *hasResult = true; *hasResultType = true; break;
+    case Op::OpBytePermute: *hasResult = true; *hasResultType = true; break;
+    case Op::OpShuffleFillDown: *hasResult = true; *hasResultType = true; break;
     }
 }
 inline const char* SourceLanguageToString(SourceLanguage value) {
@@ -5194,6 +5200,9 @@ inline const char* OpToString(Op value) {
     case Op::OpCpAsyncWaitGroup: return "OpCpAsyncWaitGroup";
     case Op::OpBarrierArrive: return "OpBarrierArrive";
     case Op::OpBarrierWait: return "OpBarrierWait";
+    case Op::OpShuffleIndex: return "OpShuffleIndex";
+    case Op::OpBytePermute: return "OpBytePermute";
+    case Op::OpShuffleFillDown: return "OpShuffleFillDown";
     default: return "Unknown";
     }
 }

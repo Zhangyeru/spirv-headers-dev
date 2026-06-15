@@ -10945,6 +10945,50 @@
         { "kind" : "IdRef",             "name" : "'N'" }
       ],
       "version" : "1.0"
+    },
+    {
+      "opname" : "OpShuffleIndex",
+      "class"  : "Reserved",
+      "opcode" : 6478,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "'Value'" },
+        { "kind" : "IdRef",             "name" : "'Index'" }
+      ],
+      "capabilities" : [ "Shader" ],
+      "extensions" : [ "SPV_HW_neural_shader" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpBytePermute",
+      "class"  : "Reserved",
+      "opcode" : 6479,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "'Src0'" },
+        { "kind" : "IdRef",             "name" : "'Src1'" },
+        { "kind" : "IdRef",             "name" : "'Mask'" }
+      ],
+      "capabilities" : [ "Shader" ],
+      "extensions" : [ "SPV_HW_neural_shader" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpShuffleFillDown",
+      "class"  : "Reserved",
+      "opcode" : 6480,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "'Src'" },
+        { "kind" : "IdRef",             "name" : "'Fill'" },
+        { "kind" : "IdRef",             "name" : "'Shift'" }
+      ],
+      "capabilities" : [ "Shader" ],
+      "extensions" : [ "SPV_HW_neural_shader" ],
+      "version" : "None"
     }
   ],
   "operand_kinds" : [
