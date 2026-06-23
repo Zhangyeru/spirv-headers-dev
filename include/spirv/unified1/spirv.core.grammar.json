@@ -10895,7 +10895,8 @@
         { "kind" : "IdResult" },
         { "kind" : "LiteralInteger",  "name" : "'Dim'" }
       ],
-      "version" : "1.0"
+      "extensions" : [ "SPV_HW_neural_shader" ],
+      "version" : "None"
     },
     {
       "opname" : "OpCpAsyncTensorGlobalShared",
@@ -10907,7 +10908,8 @@
         { "kind" : "IdRef",             "name" : "'TensorMap'" },
         { "kind" : "IdRef",             "name" : "'Coord'" }
       ],
-      "version" : "1.0"
+      "extensions" : [ "SPV_HW_neural_shader" ],
+      "version" : "None"
     },
     {
       "opname" : "OpCpAsyncCommitGroup",
@@ -10915,7 +10917,8 @@
       "opcode" : 6474,
       "operands" : [
       ],
-      "version" : "1.0"
+      "extensions" : [ "SPV_HW_neural_shader" ],
+      "version" : "None"
     },
     {
       "opname" : "OpCpAsyncWaitGroup",
@@ -10924,7 +10927,8 @@
       "operands" : [
         { "kind" : "LiteralInteger",    "name" : "'N'" }
       ],
-      "version" : "1.0"
+      "extensions" : [ "SPV_HW_neural_shader" ],
+      "version" : "None"
     },
     {
       "opname" : "OpBarrierArrive",
@@ -10934,7 +10938,8 @@
         { "kind" : "IdRef",             "name" : "'Id'" },
         { "kind" : "IdRef",             "name" : "'N'" }
       ],
-      "version" : "1.0"
+      "extensions" : [ "SPV_HW_neural_shader" ],
+      "version" : "None"
     },
     {
       "opname" : "OpBarrierWait",
@@ -10944,7 +10949,8 @@
         { "kind" : "IdRef",             "name" : "'Id'" },
         { "kind" : "IdRef",             "name" : "'N'" }
       ],
-      "version" : "1.0"
+      "extensions" : [ "SPV_HW_neural_shader" ],
+      "version" : "None"
     },
     {
       "opname" : "OpShuffleIndex",
