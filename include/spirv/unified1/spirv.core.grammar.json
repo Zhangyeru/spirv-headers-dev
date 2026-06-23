@@ -5982,7 +5982,7 @@
     {
       "opname" : "OpTypeCooperativeVectorHW",
       "class"  : "Type-Declaration",
-      "opcode" : 65010,
+      "opcode" : 6608,
       "operands" : [
         { "kind" : "IdResult" },
         { "kind" : "IdRef",        "name" : "'Component Type'" },
@@ -6016,7 +6016,7 @@
     {
       "opname" : "OpCooperativeVectorMatrixMulHW",
       "class"  : "Reserved",
-      "opcode" : 65011,
+      "opcode" : 6612,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
@@ -6029,7 +6029,7 @@
     {
       "opname" : "OpCooperativeVectorMatrixMulAddHW",
       "class"  : "Reserved",
-      "opcode" : 65014,
+      "opcode" : 6611,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
@@ -6203,7 +6203,7 @@
     {
       "opname" : "OpCooperativeVectorLoadHW",
       "class"  : "Memory",
-      "opcode" : 65015,
+      "opcode" : 6609,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
@@ -6230,7 +6230,7 @@
     {
       "opname" : "OpCooperativeVectorStoreHW",
       "class"  : "Memory",
-      "opcode" : 65016,
+      "opcode" : 6610,
       "operands" : [
         { "kind" : "IdRef",             "name" : "'Pointer'" },
         { "kind" : "IdRef",             "name" : "'Offset'" },
@@ -6243,7 +6243,7 @@
     {
       "opname" : "OpTypeCooperativeMatrixHW",
       "class"  : "Type-Declaration",
-      "opcode" : 65050,
+      "opcode" : 6601,
       "operands" : [
         { "kind" : "IdResult" },
         { "kind" : "IdRef",        "name" : "'Component Type'" },
@@ -6258,7 +6258,7 @@
     {
       "opname" : "OpCooperativeMatrixLoadHW",
       "class"  : "Reserved",
-      "opcode" : 65051,
+      "opcode" : 6603,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
@@ -6275,7 +6275,7 @@
     {
       "opname" : "OpCooperativeMatrixStoreHW",
       "class"  : "Reserved",
-      "opcode" : 65052,
+      "opcode" : 6604,
       "operands" : [
         { "kind" : "IdRef",             "name" : "'Pointer'" },
         { "kind" : "IdRef",             "name" : "'Object'" },
@@ -6291,7 +6291,7 @@
     {
       "opname" : "OpCooperativeMatrixMulAddHW",
       "class"  : "Reserved",
-      "opcode" : 65053,
+      "opcode" : 6605,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
@@ -6306,7 +6306,7 @@
     {
       "opname" : "OpCooperativeMatrixLengthHW",
       "class"  : "Reserved",
-      "opcode" : 65054,
+      "opcode" : 6602,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
@@ -6319,7 +6319,7 @@
     {
       "opname" : "OpCooperativeMatrixReduceHW",
       "class"  : "Arithmetic",
-      "opcode" : 65055,
+      "opcode" : 6606,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
@@ -16819,7 +16819,7 @@
         },
         {
           "enumerant" : "CooperativeMatrixHW",
-          "value" : 65040,
+          "value" : 6600,
           "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_HW_neural_shader" ],
           "version" : "None"
@@ -16902,7 +16902,7 @@
         },
         {
           "enumerant" : "CooperativeVectorHW",
-          "value" : 65000,
+          "value" : 6607,
           "extensions" : [ "SPV_HW_neural_shader" ],
           "version" : "None"
         },
