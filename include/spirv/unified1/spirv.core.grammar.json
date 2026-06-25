@@ -11212,6 +11212,12 @@
           "enumerant" : "DontFlatten",
           "value" : "0x0002",
           "version" : "1.0"
+        },
+        {
+          "enumerant" : "Relreg",
+          "value" : "0x0004",
+          "extensions" : [ "SPV_HW_neural_shader" ],
+          "version" : "None"
         }
       ]
     },
