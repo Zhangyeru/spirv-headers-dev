@@ -801,6 +801,7 @@ enum class BuiltIn : unsigned {
 enum class SelectionControlShift : unsigned {
     Flatten = 0,
     DontFlatten = 1,
+    Relreg = 2,
     Max = 0x7fffffff,
 };
 
@@ -808,6 +809,7 @@ enum class SelectionControlMask : unsigned {
     MaskNone = 0,
     Flatten = 0x00000001,
     DontFlatten = 0x00000002,
+    Relreg = 0x00000004,
 };
 
 enum class LoopControlShift : unsigned {
@@ -2400,15 +2402,15 @@ enum class Op : unsigned {
     OpGroupLogicalXorKHR = 6408,
     OpMaskedGatherINTEL = 6428,
     OpMaskedScatterINTEL = 6429,
-    OpTypeTensorMap = 6466,
-    OpCpAsyncTensorGlobalShared = 6470,
-    OpCpAsyncCommitGroup = 6474,
-    OpCpAsyncWaitGroup = 6475,
-    OpBarrierArrive = 6476,
-    OpBarrierWait = 6477,
-    OpShuffleIndex = 6478,
-    OpBytePermute = 6479,
-    OpShuffleFillDown = 6480,
+    OpTypeTensorMapHW = 6613,
+    OpCpAsyncTensorGlobalSharedHW = 6614,
+    OpCpAsyncCommitGroupHW = 6615,
+    OpCpAsyncWaitGroupHW = 6616,
+    OpBarrierArriveHW = 6617,
+    OpBarrierWaitHW = 6618,
+    OpShuffleIndexHW = 6619,
+    OpBytePermuteHW = 6620,
+    OpShuffleFillDownHW = 6621,
     Max = 0x7fffffff,
 };
 
@@ -3218,15 +3220,15 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpGroupLogicalXorKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
-    case Op::OpTypeTensorMap: *hasResult = true; *hasResultType = false; break;
-    case Op::OpCpAsyncTensorGlobalShared: *hasResult = false; *hasResultType = false; break;
-    case Op::OpCpAsyncCommitGroup: *hasResult = false; *hasResultType = false; break;
-    case Op::OpCpAsyncWaitGroup: *hasResult = false; *hasResultType = false; break;
-    case Op::OpBarrierArrive: *hasResult = false; *hasResultType = false; break;
-    case Op::OpBarrierWait: *hasResult = false; *hasResultType = false; break;
-    case Op::OpShuffleIndex: *hasResult = true; *hasResultType = true; break;
-    case Op::OpBytePermute: *hasResult = true; *hasResultType = true; break;
-    case Op::OpShuffleFillDown: *hasResult = true; *hasResultType = true; break;
+    case Op::OpTypeTensorMapHW: *hasResult = true; *hasResultType = false; break;
+    case Op::OpCpAsyncTensorGlobalSharedHW: *hasResult = false; *hasResultType = false; break;
+    case Op::OpCpAsyncCommitGroupHW: *hasResult = false; *hasResultType = false; break;
+    case Op::OpCpAsyncWaitGroupHW: *hasResult = false; *hasResultType = false; break;
+    case Op::OpBarrierArriveHW: *hasResult = false; *hasResultType = false; break;
+    case Op::OpBarrierWaitHW: *hasResult = false; *hasResultType = false; break;
+    case Op::OpShuffleIndexHW: *hasResult = true; *hasResultType = true; break;
+    case Op::OpBytePermuteHW: *hasResult = true; *hasResultType = true; break;
+    case Op::OpShuffleFillDownHW: *hasResult = true; *hasResultType = true; break;
     }
 }
 inline const char* SourceLanguageToString(SourceLanguage value) {
@@ -5194,15 +5196,15 @@ inline const char* OpToString(Op value) {
     case Op::OpGroupLogicalXorKHR: return "OpGroupLogicalXorKHR";
     case Op::OpMaskedGatherINTEL: return "OpMaskedGatherINTEL";
     case Op::OpMaskedScatterINTEL: return "OpMaskedScatterINTEL";
-    case Op::OpTypeTensorMap: return "OpTypeTensorMap";
-    case Op::OpCpAsyncTensorGlobalShared: return "OpCpAsyncTensorGlobalShared";
-    case Op::OpCpAsyncCommitGroup: return "OpCpAsyncCommitGroup";
-    case Op::OpCpAsyncWaitGroup: return "OpCpAsyncWaitGroup";
-    case Op::OpBarrierArrive: return "OpBarrierArrive";
-    case Op::OpBarrierWait: return "OpBarrierWait";
-    case Op::OpShuffleIndex: return "OpShuffleIndex";
-    case Op::OpBytePermute: return "OpBytePermute";
-    case Op::OpShuffleFillDown: return "OpShuffleFillDown";
+    case Op::OpTypeTensorMapHW: return "OpTypeTensorMapHW";
+    case Op::OpCpAsyncTensorGlobalSharedHW: return "OpCpAsyncTensorGlobalSharedHW";
+    case Op::OpCpAsyncCommitGroupHW: return "OpCpAsyncCommitGroupHW";
+    case Op::OpCpAsyncWaitGroupHW: return "OpCpAsyncWaitGroupHW";
+    case Op::OpBarrierArriveHW: return "OpBarrierArriveHW";
+    case Op::OpBarrierWaitHW: return "OpBarrierWaitHW";
+    case Op::OpShuffleIndexHW: return "OpShuffleIndexHW";
+    case Op::OpBytePermuteHW: return "OpBytePermuteHW";
+    case Op::OpShuffleFillDownHW: return "OpShuffleFillDownHW";
     default: return "Unknown";
     }
 }
