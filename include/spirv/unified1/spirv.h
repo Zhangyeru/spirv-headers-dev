@@ -2406,15 +2406,15 @@ typedef enum SpvOp_ {
     SpvOpGroupLogicalXorKHR = 6408,
     SpvOpMaskedGatherINTEL = 6428,
     SpvOpMaskedScatterINTEL = 6429,
-    SpvOpTypeTensorMap = 6466,
-    SpvOpCpAsyncTensorGlobalShared = 6470,
-    SpvOpCpAsyncCommitGroup = 6474,
-    SpvOpCpAsyncWaitGroup = 6475,
-    SpvOpBarrierArrive = 6476,
-    SpvOpBarrierWait = 6477,
-    SpvOpShuffleIndex = 6478,
-    SpvOpBytePermute = 6479,
-    SpvOpShuffleFillDown = 6480,
+    SpvOpTypeTensorMapHW = 6613,
+    SpvOpCpAsyncTensorGlobalSharedHW = 6614,
+    SpvOpCpAsyncCommitGroupHW = 6615,
+    SpvOpCpAsyncWaitGroupHW = 6616,
+    SpvOpBarrierArriveHW = 6617,
+    SpvOpBarrierWaitHW = 6618,
+    SpvOpShuffleIndexHW = 6619,
+    SpvOpBytePermuteHW = 6620,
+    SpvOpShuffleFillDownHW = 6621,
     SpvOpMax = 0x7fffffff,
 } SpvOp;
 
@@ -3224,15 +3224,15 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpGroupLogicalXorKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
-    case SpvOpTypeTensorMap: *hasResult = true; *hasResultType = false; break;
-    case SpvOpCpAsyncTensorGlobalShared: *hasResult = false; *hasResultType = false; break;
-    case SpvOpCpAsyncCommitGroup: *hasResult = false; *hasResultType = false; break;
-    case SpvOpCpAsyncWaitGroup: *hasResult = false; *hasResultType = false; break;
-    case SpvOpBarrierArrive: *hasResult = false; *hasResultType = false; break;
-    case SpvOpBarrierWait: *hasResult = false; *hasResultType = false; break;
-    case SpvOpShuffleIndex: *hasResult = true; *hasResultType = true; break;
-    case SpvOpBytePermute: *hasResult = true; *hasResultType = true; break;
-    case SpvOpShuffleFillDown: *hasResult = true; *hasResultType = true; break;
+    case SpvOpTypeTensorMapHW: *hasResult = true; *hasResultType = false; break;
+    case SpvOpCpAsyncTensorGlobalSharedHW: *hasResult = false; *hasResultType = false; break;
+    case SpvOpCpAsyncCommitGroupHW: *hasResult = false; *hasResultType = false; break;
+    case SpvOpCpAsyncWaitGroupHW: *hasResult = false; *hasResultType = false; break;
+    case SpvOpBarrierArriveHW: *hasResult = false; *hasResultType = false; break;
+    case SpvOpBarrierWaitHW: *hasResult = false; *hasResultType = false; break;
+    case SpvOpShuffleIndexHW: *hasResult = true; *hasResultType = true; break;
+    case SpvOpBytePermuteHW: *hasResult = true; *hasResultType = true; break;
+    case SpvOpShuffleFillDownHW: *hasResult = true; *hasResultType = true; break;
     }
 }
 inline const char* SpvSourceLanguageToString(SpvSourceLanguage value) {
@@ -5200,15 +5200,15 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpGroupLogicalXorKHR: return "OpGroupLogicalXorKHR";
     case SpvOpMaskedGatherINTEL: return "OpMaskedGatherINTEL";
     case SpvOpMaskedScatterINTEL: return "OpMaskedScatterINTEL";
-    case SpvOpTypeTensorMap: return "OpTypeTensorMap";
-    case SpvOpCpAsyncTensorGlobalShared: return "OpCpAsyncTensorGlobalShared";
-    case SpvOpCpAsyncCommitGroup: return "OpCpAsyncCommitGroup";
-    case SpvOpCpAsyncWaitGroup: return "OpCpAsyncWaitGroup";
-    case SpvOpBarrierArrive: return "OpBarrierArrive";
-    case SpvOpBarrierWait: return "OpBarrierWait";
-    case SpvOpShuffleIndex: return "OpShuffleIndex";
-    case SpvOpBytePermute: return "OpBytePermute";
-    case SpvOpShuffleFillDown: return "OpShuffleFillDown";
+    case SpvOpTypeTensorMapHW: return "OpTypeTensorMapHW";
+    case SpvOpCpAsyncTensorGlobalSharedHW: return "OpCpAsyncTensorGlobalSharedHW";
+    case SpvOpCpAsyncCommitGroupHW: return "OpCpAsyncCommitGroupHW";
+    case SpvOpCpAsyncWaitGroupHW: return "OpCpAsyncWaitGroupHW";
+    case SpvOpBarrierArriveHW: return "OpBarrierArriveHW";
+    case SpvOpBarrierWaitHW: return "OpBarrierWaitHW";
+    case SpvOpShuffleIndexHW: return "OpShuffleIndexHW";
+    case SpvOpBytePermuteHW: return "OpBytePermuteHW";
+    case SpvOpShuffleFillDownHW: return "OpShuffleFillDownHW";
     default: return "Unknown";
     }
 }

@@ -10888,9 +10888,9 @@
       "version" : "None"
     },
     {
-      "opname" : "OpTypeTensorMap",
+      "opname" : "OpTypeTensorMapHW",
       "class"  : "Type-Declaration",
-      "opcode" : 6466,
+      "opcode" : 6613,
       "operands" : [
         { "kind" : "IdResult" },
         { "kind" : "LiteralInteger",  "name" : "'Dim'" }
@@ -10899,9 +10899,9 @@
       "version" : "None"
     },
     {
-      "opname" : "OpCpAsyncTensorGlobalShared",
+      "opname" : "OpCpAsyncTensorGlobalSharedHW",
       "class"  : "Memory",
-      "opcode" : 6470,
+      "opcode" : 6614,
       "operands" : [
         { "kind" : "LiteralInteger",    "name" : "'Dim'" },
         { "kind" : "IdRef",             "name" : "'DstMem'" },
@@ -10912,18 +10912,18 @@
       "version" : "None"
     },
     {
-      "opname" : "OpCpAsyncCommitGroup",
+      "opname" : "OpCpAsyncCommitGroupHW",
       "class"  : "Memory",
-      "opcode" : 6474,
+      "opcode" : 6615,
       "operands" : [
       ],
       "extensions" : [ "SPV_HW_neural_shader" ],
       "version" : "None"
     },
     {
-      "opname" : "OpCpAsyncWaitGroup",
+      "opname" : "OpCpAsyncWaitGroupHW",
       "class"  : "Memory",
-      "opcode" : 6475,
+      "opcode" : 6616,
       "operands" : [
         { "kind" : "LiteralInteger",    "name" : "'N'" }
       ],
@@ -10931,9 +10931,9 @@
       "version" : "None"
     },
     {
-      "opname" : "OpBarrierArrive",
+      "opname" : "OpBarrierArriveHW",
       "class"  : "Barrier",
-      "opcode" : 6476,
+      "opcode" : 6617,
       "operands" : [
         { "kind" : "IdRef",             "name" : "'Id'" },
         { "kind" : "IdRef",             "name" : "'N'" }
@@ -10942,9 +10942,9 @@
       "version" : "None"
     },
     {
-      "opname" : "OpBarrierWait",
+      "opname" : "OpBarrierWaitHW",
       "class"  : "Barrier",
-      "opcode" : 6477,
+      "opcode" : 6618,
       "operands" : [
         { "kind" : "IdRef",             "name" : "'Id'" },
         { "kind" : "IdRef",             "name" : "'N'" }
@@ -10953,9 +10953,9 @@
       "version" : "None"
     },
     {
-      "opname" : "OpShuffleIndex",
+      "opname" : "OpShuffleIndexHW",
       "class"  : "Reserved",
-      "opcode" : 6478,
+      "opcode" : 6619,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
@@ -10967,9 +10967,9 @@
       "version" : "None"
     },
     {
-      "opname" : "OpBytePermute",
+      "opname" : "OpBytePermuteHW",
       "class"  : "Reserved",
-      "opcode" : 6479,
+      "opcode" : 6620,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
@@ -10982,9 +10982,9 @@
       "version" : "None"
     },
     {
-      "opname" : "OpShuffleFillDown",
+      "opname" : "OpShuffleFillDownHW",
       "class"  : "Reserved",
-      "opcode" : 6480,
+      "opcode" : 6621,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
