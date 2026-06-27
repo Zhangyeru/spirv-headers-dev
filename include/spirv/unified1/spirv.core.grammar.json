@@ -10925,7 +10925,7 @@
       "class"  : "Memory",
       "opcode" : 6616,
       "operands" : [
-        { "kind" : "LiteralInteger",    "name" : "'N'" }
+        { "kind" : "IdRef",             "name" : "'N'" }
       ],
       "extensions" : [ "SPV_HW_neural_shader" ],
       "version" : "None"
