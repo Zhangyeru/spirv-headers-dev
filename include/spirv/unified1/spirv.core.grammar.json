@@ -6263,8 +6263,8 @@
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
         { "kind" : "IdRef",             "name" : "'Pointer'" },
-        { "kind" : "IdRef",             "name" : "'Matrix Shape'" },
-        { "kind" : "IdRef",             "name" : "'Matrix Offset'" },
+        { "kind" : "IdRef",             "name" : "'Offset'" },
+        { "kind" : "IdRef",             "name" : "'Stride'" },
         { "kind" : "IdRef",             "name" : "'Matrix Layout'" },
         { "kind" : "MemoryAccess",      "quantifier" : "?" }
       ],
@@ -6279,8 +6279,8 @@
       "operands" : [
         { "kind" : "IdRef",             "name" : "'Pointer'" },
         { "kind" : "IdRef",             "name" : "'Object'" },
-        { "kind" : "IdRef",             "name" : "'Matrix Shape'" },
-        { "kind" : "IdRef",             "name" : "'Matrix Offset'" },
+        { "kind" : "IdRef",             "name" : "'Offset'" },
+        { "kind" : "IdRef",             "name" : "'Stride'" },
         { "kind" : "IdRef",             "name" : "'Matrix Layout'" },
         { "kind" : "MemoryAccess",      "quantifier" : "?" }
       ],
