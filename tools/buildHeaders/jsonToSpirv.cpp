@@ -266,6 +266,10 @@ EnumValues PackedVectorFormatParams;
 EnumValues CooperativeMatrixOperandsParams;
 EnumValues CooperativeMatrixLayoutParams;
 EnumValues CooperativeMatrixUseParams;
+EnumValues CooperativeMatrixUseHWParams;
+EnumValues CooperativeMatrixReduceShiftHWParams;
+EnumValues CooperativeMatrixReduceOpHWParams;
+EnumValues CooperativeVectorMatrixLayoutHWParams;
 EnumValues CooperativeMatrixReduceParams;
 EnumValues TensorClampModeParams;
 EnumValues TensorAddressingOperandsParams;
@@ -457,6 +461,14 @@ ClassOptionality ToOperandClassAndOptionality(const std::string& operandKind, co
             type = OperandFPEncoding;
         } else if (operandKind == "CooperativeVectorMatrixLayout") {
             type = OperandCooperativeVectorMatrixLayout;
+        } else if (operandKind == "CooperativeMatrixUseHW") {
+            type = OperandCooperativeMatrixUseHW;
+        } else if (operandKind == "CooperativeMatrixReduceShiftHW") {
+            type = OperandCooperativeMatrixReduceShiftHW;
+        } else if (operandKind == "CooperativeMatrixReduceOpHW") {
+            type = OperandCooperativeMatrixReduceOpHW;
+        } else if (operandKind == "CooperativeVectorMatrixLayoutHW") {
+            type = OperandCooperativeVectorMatrixLayoutHW;
         } else if (operandKind == "ComponentType") {
             type = OperandComponentType;
         }
@@ -853,6 +865,14 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
             establishOperandClass(enumName, OperandFPEncoding, &FPEncodingParams, operandEnum, category);
         } else if (enumName == "CooperativeVectorMatrixLayout") {
             establishOperandClass(enumName, OperandCooperativeVectorMatrixLayout, &CooperativeVectorMatrixLayoutParams, operandEnum, category);
+        } else if (enumName == "CooperativeMatrixUseHW") {
+            establishOperandClass(enumName, OperandCooperativeMatrixUseHW, &CooperativeMatrixUseHWParams, operandEnum, category);
+        } else if (enumName == "CooperativeMatrixReduceShiftHW") {
+            establishOperandClass(enumName, OperandCooperativeMatrixReduceShiftHW, &CooperativeMatrixReduceShiftHWParams, operandEnum, category);
+        } else if (enumName == "CooperativeMatrixReduceOpHW") {
+            establishOperandClass(enumName, OperandCooperativeMatrixReduceOpHW, &CooperativeMatrixReduceOpHWParams, operandEnum, category);
+        } else if (enumName == "CooperativeVectorMatrixLayoutHW") {
+            establishOperandClass(enumName, OperandCooperativeVectorMatrixLayoutHW, &CooperativeVectorMatrixLayoutHWParams, operandEnum, category);
         } else if (enumName == "ComponentType") {
             establishOperandClass(enumName, OperandComponentType, &ComponentTypeParams, operandEnum, category);
         }
