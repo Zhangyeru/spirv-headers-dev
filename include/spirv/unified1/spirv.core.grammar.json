@@ -6469,6 +6469,84 @@
       "version" : "None"
     },
     {
+      "opname" : "OpStoreMatrixB8X1Burst1RowHW",
+      "class"  : "Reserved",
+      "opcode" : 6714,
+      "operands" : [
+        { "kind" : "IdRef",        "name" : "'Pointer'" },
+        { "kind" : "IdRef",        "name" : "'Object'" },
+        { "kind" : "IdRef",        "name" : "'Offset'" },
+        { "kind" : "MemoryAccess", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "CooperativeMatrixHW" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpStoreMatrixB8X2Burst1RowHW",
+      "class"  : "Reserved",
+      "opcode" : 6715,
+      "operands" : [
+        { "kind" : "IdRef",        "name" : "'Pointer'" },
+        { "kind" : "IdRef",        "name" : "'Object'" },
+        { "kind" : "IdRef",        "name" : "'Offset'" },
+        { "kind" : "MemoryAccess", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "CooperativeMatrixHW" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpStoreMatrixB8X1Burst1ColumnHW",
+      "class"  : "Reserved",
+      "opcode" : 6716,
+      "operands" : [
+        { "kind" : "IdRef",        "name" : "'Pointer'" },
+        { "kind" : "IdRef",        "name" : "'Object'" },
+        { "kind" : "IdRef",        "name" : "'Offset'" },
+        { "kind" : "MemoryAccess", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "CooperativeMatrixHW" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpStoreMatrixB8X2Burst1ColumnHW",
+      "class"  : "Reserved",
+      "opcode" : 6717,
+      "operands" : [
+        { "kind" : "IdRef",        "name" : "'Pointer'" },
+        { "kind" : "IdRef",        "name" : "'Object'" },
+        { "kind" : "IdRef",        "name" : "'Offset'" },
+        { "kind" : "MemoryAccess", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "CooperativeMatrixHW" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpStoreMatrixB16X1Burst1RowHW",
+      "class"  : "Reserved",
+      "opcode" : 6718,
+      "operands" : [
+        { "kind" : "IdRef",        "name" : "'Pointer'" },
+        { "kind" : "IdRef",        "name" : "'Object'" },
+        { "kind" : "IdRef",        "name" : "'Offset'" },
+        { "kind" : "MemoryAccess", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "CooperativeMatrixHW" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpStoreMatrixB16X2Burst1RowHW",
+      "class"  : "Reserved",
+      "opcode" : 6719,
+      "operands" : [
+        { "kind" : "IdRef",        "name" : "'Pointer'" },
+        { "kind" : "IdRef",        "name" : "'Object'" },
+        { "kind" : "IdRef",        "name" : "'Offset'" },
+        { "kind" : "MemoryAccess", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "CooperativeMatrixHW" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpCooperativeMatrixStoreHW",
       "class"  : "Reserved",
       "opcode" : 6604,

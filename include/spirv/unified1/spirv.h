@@ -2110,6 +2110,12 @@ typedef enum SpvOp_ {
     SpvOpLoadMatrixB16X1Burst2ColumnHW = 6712,
     SpvOpLoadMatrixB16X2Burst2ColumnHW = 6713,
     SpvOpCooperativeMatrixLoadNV = 5359,
+    SpvOpStoreMatrixB8X1Burst1RowHW = 6714,
+    SpvOpStoreMatrixB8X2Burst1RowHW = 6715,
+    SpvOpStoreMatrixB8X1Burst1ColumnHW = 6716,
+    SpvOpStoreMatrixB8X2Burst1ColumnHW = 6717,
+    SpvOpStoreMatrixB16X1Burst1RowHW = 6718,
+    SpvOpStoreMatrixB16X2Burst1RowHW = 6719,
     SpvOpCooperativeMatrixStoreNV = 5360,
     SpvOpCooperativeMatrixMulAddNV = 5361,
     SpvOpCooperativeMatrixLengthNV = 5362,
@@ -2945,6 +2951,12 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpLoadMatrixB16X1Burst2ColumnHW: *hasResult = true; *hasResultType = true; break;
     case SpvOpLoadMatrixB16X2Burst2ColumnHW: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeMatrixLoadNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpStoreMatrixB8X1Burst1RowHW: *hasResult = false; *hasResultType = false; break;
+    case SpvOpStoreMatrixB8X2Burst1RowHW: *hasResult = false; *hasResultType = false; break;
+    case SpvOpStoreMatrixB8X1Burst1ColumnHW: *hasResult = false; *hasResultType = false; break;
+    case SpvOpStoreMatrixB8X2Burst1ColumnHW: *hasResult = false; *hasResultType = false; break;
+    case SpvOpStoreMatrixB16X1Burst1RowHW: *hasResult = false; *hasResultType = false; break;
+    case SpvOpStoreMatrixB16X2Burst1RowHW: *hasResult = false; *hasResultType = false; break;
     case SpvOpCooperativeMatrixStoreNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpCooperativeMatrixMulAddNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeMatrixLengthNV: *hasResult = true; *hasResultType = true; break;
@@ -4935,6 +4947,12 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpLoadMatrixB16X1Burst2ColumnHW: return "OpLoadMatrixB16X1Burst2ColumnHW";
     case SpvOpLoadMatrixB16X2Burst2ColumnHW: return "OpLoadMatrixB16X2Burst2ColumnHW";
     case SpvOpCooperativeMatrixLoadNV: return "OpCooperativeMatrixLoadNV";
+    case SpvOpStoreMatrixB8X1Burst1RowHW: return "OpStoreMatrixB8X1Burst1RowHW";
+    case SpvOpStoreMatrixB8X2Burst1RowHW: return "OpStoreMatrixB8X2Burst1RowHW";
+    case SpvOpStoreMatrixB8X1Burst1ColumnHW: return "OpStoreMatrixB8X1Burst1ColumnHW";
+    case SpvOpStoreMatrixB8X2Burst1ColumnHW: return "OpStoreMatrixB8X2Burst1ColumnHW";
+    case SpvOpStoreMatrixB16X1Burst1RowHW: return "OpStoreMatrixB16X1Burst1RowHW";
+    case SpvOpStoreMatrixB16X2Burst1RowHW: return "OpStoreMatrixB16X2Burst1RowHW";
     case SpvOpCooperativeMatrixStoreNV: return "OpCooperativeMatrixStoreNV";
     case SpvOpCooperativeMatrixMulAddNV: return "OpCooperativeMatrixMulAddNV";
     case SpvOpCooperativeMatrixLengthNV: return "OpCooperativeMatrixLengthNV";

@@ -2093,6 +2093,12 @@ enum Op {
     OpLoadMatrixB16X1Burst2ColumnHW = 6712,
     OpLoadMatrixB16X2Burst2ColumnHW = 6713,
     OpCooperativeMatrixLoadNV = 5359,
+    OpStoreMatrixB8X1Burst1RowHW = 6714,
+    OpStoreMatrixB8X2Burst1RowHW = 6715,
+    OpStoreMatrixB8X1Burst1ColumnHW = 6716,
+    OpStoreMatrixB8X2Burst1ColumnHW = 6717,
+    OpStoreMatrixB16X1Burst1RowHW = 6718,
+    OpStoreMatrixB16X2Burst1RowHW = 6719,
     OpCooperativeMatrixStoreNV = 5360,
     OpCooperativeMatrixMulAddNV = 5361,
     OpCooperativeMatrixLengthNV = 5362,
@@ -2917,6 +2923,12 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpLoadMatrixB16X1Burst2ColumnHW: *hasResult = true; *hasResultType = true; break;
     case OpLoadMatrixB16X2Burst2ColumnHW: *hasResult = true; *hasResultType = true; break;
     case OpCooperativeMatrixLoadNV: *hasResult = true; *hasResultType = true; break;
+    case OpStoreMatrixB8X1Burst1RowHW: *hasResult = false; *hasResultType = false; break;
+    case OpStoreMatrixB8X2Burst1RowHW: *hasResult = false; *hasResultType = false; break;
+    case OpStoreMatrixB8X1Burst1ColumnHW: *hasResult = false; *hasResultType = false; break;
+    case OpStoreMatrixB8X2Burst1ColumnHW: *hasResult = false; *hasResultType = false; break;
+    case OpStoreMatrixB16X1Burst1RowHW: *hasResult = false; *hasResultType = false; break;
+    case OpStoreMatrixB16X2Burst1RowHW: *hasResult = false; *hasResultType = false; break;
     case OpCooperativeMatrixStoreNV: *hasResult = false; *hasResultType = false; break;
     case OpCooperativeMatrixMulAddNV: *hasResult = true; *hasResultType = true; break;
     case OpCooperativeMatrixLengthNV: *hasResult = true; *hasResultType = true; break;
@@ -4894,6 +4906,12 @@ inline const char* OpToString(Op value) {
     case OpLoadMatrixB16X1Burst2ColumnHW: return "OpLoadMatrixB16X1Burst2ColumnHW";
     case OpLoadMatrixB16X2Burst2ColumnHW: return "OpLoadMatrixB16X2Burst2ColumnHW";
     case OpCooperativeMatrixLoadNV: return "OpCooperativeMatrixLoadNV";
+    case OpStoreMatrixB8X1Burst1RowHW: return "OpStoreMatrixB8X1Burst1RowHW";
+    case OpStoreMatrixB8X2Burst1RowHW: return "OpStoreMatrixB8X2Burst1RowHW";
+    case OpStoreMatrixB8X1Burst1ColumnHW: return "OpStoreMatrixB8X1Burst1ColumnHW";
+    case OpStoreMatrixB8X2Burst1ColumnHW: return "OpStoreMatrixB8X2Burst1ColumnHW";
+    case OpStoreMatrixB16X1Burst1RowHW: return "OpStoreMatrixB16X1Burst1RowHW";
+    case OpStoreMatrixB16X2Burst1RowHW: return "OpStoreMatrixB16X2Burst1RowHW";
     case OpCooperativeMatrixStoreNV: return "OpCooperativeMatrixStoreNV";
     case OpCooperativeMatrixMulAddNV: return "OpCooperativeMatrixMulAddNV";
     case OpCooperativeMatrixLengthNV: return "OpCooperativeMatrixLengthNV";
